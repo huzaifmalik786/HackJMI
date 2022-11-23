@@ -63,10 +63,14 @@ function HeroHome() {
 								className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center sm:items-center"
 								data-aos="zoom-y-out"
 								data-aos-delay="300">
-								<div
-									className="apply-button self-center"
-									data-hackathon-slug="YOUR-HACKATHON-SLUG"
-									data-button-theme="light"></div>
+								<div>
+									<a
+										className="btn 
+										font-semibold w-full sm:w-auto sm:ml-4 self-center hover:bg-orange-400 bg-orange-600 text-white"
+										href="#register">
+										Register
+									</a>
+								</div>
 								<div>
 									<a
 										className="btn 

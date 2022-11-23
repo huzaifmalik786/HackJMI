@@ -26,11 +26,11 @@ function Sponsers() {
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-						<h1 className="h2 mb-4">Sponsers</h1>
+						<h1 className="h2 mb-4">Sponsors</h1>
 
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
-								<h1 className="h4 my-5">{key} Sponsers</h1>
+								<h1 className="h4 my-5">{key} Sponsors</h1>
 								<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => (
 										<div className="w-1/3 md:w-1/4 p-2">

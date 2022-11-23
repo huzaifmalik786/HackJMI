@@ -10,6 +10,9 @@ import Sponsors from "../partials/Sponsors";
 import Register from "../partials/Register";
 import FAQ from "../partials/Faq";
 
+
+import JMI from "../images/brands/jmi.png";
+
 function Home() {
 	return (
 		<div className="flex flex-col min-h-screen overflow-hidden" id="">
@@ -32,7 +35,20 @@ function Home() {
 			</main>
 
 			{/*  Site footer */}
-			<Footer />
+			{/* <Footer /> */}
+			<div className="p-5 flex justify-around mt-16 border-t-2 ">
+				<p className="w-full">HACK JMI</p>
+
+				<p className=" w-full flex justify-center">
+					Made with ❤️ by
+					<span className="text-orange-500 ml-2">HACK JMI Team</span>
+				</p>
+				<p className=" w-full justify-end flex">
+					<a href="https://jmi.ac.in">
+						<img src={JMI} className="w-10" />
+					</a>
+				</p>
+			</div>
 		</div>
 	);
 }
