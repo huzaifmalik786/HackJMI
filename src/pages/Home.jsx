@@ -4,12 +4,9 @@ import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
 import About from "../partials/About";
 import Tracks from "../partials/Tracks";
-import Testimonials from "../partials/Testimonials";
-import Newsletter from "../partials/Newsletter";
 import Footer from "../partials/Footer";
-import Banner from "../partials/Banner";
 import Schedule from "../partials/Schedule";
-import Sponsers from "../partials/Sponsers";
+import Sponsors from "../partials/Sponsors";
 import Register from "../partials/Register";
 import FAQ from "../partials/Faq";
 
@@ -26,15 +23,13 @@ function Home() {
 				<About />
 				<Tracks />
 				<Schedule />
-				<Sponsers />
+				<Sponsors />
 				<Register />
 				<FAQ />
 
 				{/* <Testimonials />
 				<Newsletter /> */}
 			</main>
-
-			<Banner />
 
 			{/*  Site footer */}
 			<Footer />

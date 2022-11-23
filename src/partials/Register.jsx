@@ -18,10 +18,24 @@ function Register() {
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="h2 mb-4">Register</h1>
-						<p className="text-xl text-gray-600">
-							Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
-							cupidatat.
+						<p className="text-gray-600 w-full text-left">
+							<strong>To register, follow these steps:</strong>
+							<ol className="flex flex-col gap-2 mt-4">
+								<li>1. Click the "Apply with Devfolio" button below</li>
+								<li>
+									2. Create an account on devfolio. If you already have an
+									account, sign in.
+								</li>
+								<li>3. Complete your application and submit for review.</li>
+								<li>
+									4. If you have a team, register your team on Devfolio and add
+									team members.
+								</li>
+								<li>
+									5. Manage your team and submissions on your Devfolio hackathon
+									dashboard.
+								</li>
+							</ol>
 						</p>
 					</div>
 				</div>
