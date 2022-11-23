@@ -1,3 +1,7 @@
 {
-	"cSpell.words": ["Hackathon"]
+	"cSpell.words": [
+		"Hackathon"
+	],
+	"editor.tabCompletion": "on",
+	"diffEditor.codeLens": true
 }
