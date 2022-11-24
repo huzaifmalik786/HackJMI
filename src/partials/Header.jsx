@@ -19,10 +19,10 @@ function Header() {
 
 	const [observerMap, setObserverMap] = useState({});
 	const [tabData, setTabData] = useState([
-		{
-			name: "About",
-			href: "#about",
-		},
+		// {
+		// 	name: "About",
+		// 	href: "#about",
+		// },
 		{
 			name: "Tracks",
 			href: "#tracks",

@@ -48,7 +48,7 @@ function Schedule() {
 							{eventSchedule.map((event, index) => (
 								<div>
 									<div className="w-4 h-4 bg-white border-black border-2 ml-[1px] rounded-full " />
-									<div className="flex w-full flex-col border-l-2 border-black mb-5 m-2">
+									<div className="flex w-full flex-col border-l-2 border-black mb-5 mt-3 m-2">
 										<div className="pl-4 rounded-lg text-md  opacity-50">
 											{event.interval}
 										</div>

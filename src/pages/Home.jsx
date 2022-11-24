@@ -12,6 +12,7 @@ import FAQ from "../partials/Faq";
 
 
 import JMI from "../images/brands/jmi.png";
+import CountdownTimer from "../partials/CountdownTimer";
 
 function Home() {
 	return (
@@ -23,7 +24,8 @@ function Home() {
 			<main className="flex-grow">
 				{/*  Page sections */}
 				<HeroHome />
-				<About />
+				<CountdownTimer />
+				{/* <About /> */}
 				<Tracks />
 				<Schedule />
 				<Sponsors />
