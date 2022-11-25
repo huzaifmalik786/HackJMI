@@ -5,8 +5,7 @@ import Modal from '../utils/Modal';
 import IEEE from '../images/brands/ieeejmi.png';
 import GDSC from '../images/brands/gdscjmi.jpg';
 import Hashes from '../images/brands/hashes.png';
-import HeroImage from '../images/hero-image.png';
-
+import Logo from "../images/logo.png";
 function HeroHome() {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -17,6 +16,7 @@ function HeroHome() {
 			<div
 				className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none"
 				aria-hidden="true">
+
 				<svg
 					width="1360"
 					height="578"
@@ -53,6 +53,7 @@ function HeroHome() {
 							<span className="text-gray-900 ml-4">JMI</span>
 						</h1>
 						<div className="max-w-3xl mx-auto">
+						
 							<p
 								className="text-xl text-gray-600 mb-8"
 								data-aos="zoom-y-out"
@@ -81,6 +82,7 @@ function HeroHome() {
 								</div>
 							</div>
 						</div>
+						<img src={Logo} alt="Logo" className="w-80 m-auto "  />
 						<div className="max-w-3xl mx-auto flex flex-col">
 							<p className="text-gray-600 mt-36 text-sm">
 								in Collaboration with
