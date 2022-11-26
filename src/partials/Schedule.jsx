@@ -3,9 +3,6 @@ import { render } from "react-dom";
 import Transition from "../utils/Transition";
 import { Timeline, Event } from "react-timeline-scribble";
 
-import FeaturesBg from "../images/features-bg.png";
-import FeaturesElement from "../images/features-element.png";
-
 function Schedule() {
 
   const eventSchedule = [

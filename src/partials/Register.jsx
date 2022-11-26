@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Transition from "../utils/Transition";
 
-import FeaturesBg from "../images/features-bg.png";
-import FeaturesElement from "../images/features-element.png";
+
 
 function Register() {
 	return (

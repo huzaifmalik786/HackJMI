@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useComponentSize } from "../hooks/useComponentSize";
-
+import Logo from "../images/logo.png";
 function Header() {
 	const [top, setTop] = useState(true);
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -99,32 +99,11 @@ function Header() {
 						{/* Site branding */}
 						<div className="flex-shrink-0 mr-4">
 							{/* Logo */}
+
 							<a href="#" className="flex gap-2" aria-label="Cruip">
-								<svg
-									className="w-8 h-8"
-									viewBox="0 0 32 32"
-									xmlns="http://www.w3.org/2000/svg">
-									<defs>
-										<radialGradient
-											cx="21.152%"
-											cy="86.063%"
-											fx="21.152%"
-											fy="86.063%"
-											r="79.941%"
-											id="header-logo">
-											<stop stopColor="#F9931C" offset="0%" />
-											<stop stopColor="#F9931C" offset="25.871%" />
-											<stop stopColor="#F8B05C" offset="100%" />
-										</radialGradient>
-									</defs>
-									<rect
-										width="32"
-										height="32"
-										rx="16"
-										fill="url(#header-logo)"
-										fillRule="nonzero"
-									/>
-								</svg>
+							<img src={Logo} alt="Logo" className="w-14" />
+
+							
 								<p className="self-center font-bold text-orange-600">#ACK</p>
 								<p className="self-center font-semibold">JMI</p>
 							</a>
