@@ -7,6 +7,9 @@ import GDSC from "../images/brands/gdscjmi.jpg";
 import Hashes from "../images/brands/hashes.png";
 import IEEEwhite from "../images/brands/ieeewhite.png";
 import GDSCwhite from "../images/brands/gdscwhite.png";
+import IEEECS from "../images/brands/ieeecs.png";
+import IEEECSwhite from "../images/brands/ieeecswhite.png";
+
 import Logo from "../images/logo.png";
 import { DarkThemeContext } from "../pages/Home";
 function HeroHome(props) {
@@ -93,7 +96,7 @@ function HeroHome(props) {
 										href="#">
 										<span
 											className={`
-											${!isDarkTheme ? "text-gray-600" : "text-gray-300"}
+											${!isDarkTheme ? "text-gray-900" : "text-gray-600"}
 											`}>
 											Sponsor Us
 										</span>
@@ -108,11 +111,13 @@ function HeroHome(props) {
 							<div className="flex justify-center flex-wrap items-center gap-4">
 								{!isDarkTheme ? (
 									<React.Fragment>
+										<img src={IEEECS} className="w-32 h-32 object-contain" />
 										<img src={IEEE} className="w-32 h-32" />
 										<img src={GDSC} className="w-32 h-32" />
 									</React.Fragment>
 								) : (
 									<React.Fragment>
+										<img src={IEEECSwhite} className="w-32 h-32 object-contain" />
 										<img src={IEEEwhite} className="w-32 h-32" />
 										<img src={GDSCwhite} className="w-32 h-32 object-contain" />
 									</React.Fragment>
