@@ -5,10 +5,13 @@ import Modal from '../utils/Modal';
 import IEEE from '../images/brands/ieeejmi.png';
 import GDSC from '../images/brands/gdscjmi.jpg';
 import Hashes from '../images/brands/hashes.png';
+import IEEEwhite from '../images/brands/ieeewhite.png';
+import GDSCwhite from '../images/brands/gdscwhite.png';
 import Logo from "../images/logo.png";
-function HeroHome() {
+function HeroHome(props) {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const isdarktheme= props.theme;
 
   return (
 		<section className="relative">
@@ -50,12 +53,12 @@ function HeroHome() {
 							className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
 							data-aos="zoom-y-out">
 							<span className="text-orange-500">#ACK</span>
-							<span className="text-gray-900 ml-4">JMI</span>
+							<span className="theme-text text-gray-900 ml-4">JMI</span>
 						</h1>
 						<div className="max-w-3xl mx-auto">
 						
 							<p
-								className="text-xl text-gray-600 mb-8"
+								className="theme-text text-xl text-gray-600 mb-8"
 								data-aos="zoom-y-out"
 								data-aos-delay="150">
 								Hybrid Mode | 48 Hour Hackathon | 28th - 29th January 2023
@@ -74,24 +77,35 @@ function HeroHome() {
 								</div>
 								<div>
 									<a
-										className="btn 
+										className="btn
 										font-semibold w-full sm:w-auto sm:ml-4 self-center hover:bg-gray-200"
 										href="#">
-										Sponsor Us
+											{!isdarktheme?(
+												<span className="text-gray-600">Sponsor Us</span>
+											):
+											<span>Sponsor Us</span>
+											}
 									</a>
 								</div>
 							</div>
 						</div>
 						<img src={Logo} alt="Logo" className="w-80 m-auto "  />
 						<div className="max-w-3xl mx-auto flex flex-col">
-							<p className="text-gray-600 mt-36 text-sm">
+							<p className="theme-text text-gray-600 mt-36 text-sm">
 								in Collaboration with
 							</p>
-							<div className="flex justify-center flex-wrap items-center gap-4">
+							{isdarktheme?(
+								<div className="flex justify-center flex-wrap items-center gap-4">
 								<img src={IEEE} className="w-32 h-32" />
 								<img src={GDSC} className="w-32 h-32" />
 								<img src={Hashes} className="w-32 h-32 scale-50" />
 							</div>
+							):
+							<div className="flex justify-center flex-wrap items-center gap-4">
+								<img src={IEEEwhite} className="w-32 h-32" />
+								<img src={GDSCwhite} className="w-33 h-12" />
+								<img src={Hashes} className="w-32 h-32 scale-50" />
+							</div>}
 						</div>
 					</div>
 				</div>

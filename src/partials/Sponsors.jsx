@@ -6,19 +6,37 @@ import Polygon from "../images/sponsors/polygon.png";
 import Filecoin from "../images/sponsors/filecoin.png";
 import Solana from "../images/sponsors/solana.png";
 import Replit from "../images/sponsors/replit.png";
+import Replitwhite from "../images/sponsors/replitwhite.png";
+import Filecoinwhite from "../images/sponsors/filecoinwhite.png";
+import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
+import Polygonwhite from "../images/sponsors/polygonwhite.png";
+import Solanawhite from "../images/sponsors/solanawhite.png";
 
-function Sponsers() {
-	const sponsorData = {
-		Platinum: [Devfolio, Polygon],
-		Gold: [],
-		Silver: [Filecoin, Solana, Replit],
-	};
+
+
+function Sponsers(props) {
+	const isdarktheme= props.theme;
+	let sponsorData;
+	if(isdarktheme){
+		sponsorData = {
+			Platinum: [Devfolio, Polygon],
+			Gold: [],
+			Silver: [Filecoin, Solana, Replit],
+		};
+	}
+	else{
+		sponsorData = {
+			Platinum: [Devfoliowhite, Polygonwhite],
+			Gold: [],
+			Silver: [Filecoinwhite, Solanawhite, Replitwhite],
+		};
+	}
 
 	return (
 		<section className="relative" id="sponsors">
 			{/* Section background (needs .relative class on parent and next sibling elements) */}
 			<div
-				className="absolute inset-0 bg-gray-100 pointer-events-none mb-16"
+				className=" b-color absolute inset-0 bg-gray-100 pointer-events-none mb-16"
 				aria-hidden="true"></div>
 			<div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
 
@@ -26,11 +44,11 @@ function Sponsers() {
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-						<h1 className="h2 mb-4">Sponsors</h1>
+						<h1 className="theme-text h2 mb-4">Sponsors</h1>
 
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
-								<h1 className="h4 my-5">{key} Sponsors</h1>
+								<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
 								<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => (
 										<div className="w-1/3 md:w-1/4 p-2">
