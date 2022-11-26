@@ -72,14 +72,14 @@ function Header({ UpdateTheme }) {
 			name: "Sponsors",
 			href: "#sponsors",
 		},
-		// {
-		// 	name: "Register",
-		// 	href: "#register",
-		// },
-		// {
-		// 	name: "FAQ",
-		// 	href: "#faq",
-		// },
+		{
+			name: "Register",
+			href: "#register",
+		},
+		{
+			name: "FAQ",
+			href: "#faq",
+		},
 	]);
 
 	useEffect(() => {
