@@ -19,10 +19,10 @@ function Header() {
 
 	const [observerMap, setObserverMap] = useState({});
 	const [tabData, setTabData] = useState([
-		// {
-		// 	name: "About",
-		// 	href: "#about",
-		// },
+		{
+			name: "About",
+			href: "#about",
+		},
 		{
 			name: "Tracks",
 			href: "#tracks",
@@ -101,11 +101,10 @@ function Header() {
 							{/* Logo */}
 
 							<a href="#" className="flex gap-2" aria-label="Cruip">
-							<img src={Logo} alt="Logo" className="w-14" />
+								<img src={Logo} alt="Logo" className="w-14" />
 
-							
-								<p className="self-center font-bold text-orange-600">#ACK</p>
-								<p className="self-center font-semibold">JMI</p>
+								{/* <p className="self-center font-bold text-orange-600">#ACK</p>
+								<p className="self-center font-semibold">JMI</p> */}
 							</a>
 						</div>
 

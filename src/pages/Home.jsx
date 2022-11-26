@@ -25,7 +25,7 @@ function Home() {
 				{/*  Page sections */}
 				<HeroHome />
 				<CountdownTimer />
-				{/* <About /> */}
+				<About />
 				<Tracks />
 				<Schedule />
 				<Sponsors />
