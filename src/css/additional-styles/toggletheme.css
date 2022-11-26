@@ -1,0 +1,6 @@
+.dark-theme{
+    --para-clr: red;
+}
+.p{
+    color: red !important
+}

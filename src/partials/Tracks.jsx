@@ -22,7 +22,7 @@ function FeaturesBlocks() {
 					{/* Items */}
 					<div className="max-w-sm mx-auto hidden grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
 						{/* 1st item */}
-						<div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+						<div className=" dk-color relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
 							<svg
 								className="w-16 h-16 p-1 -mt-1 mb-2"
 								viewBox="0 0 64 64"
@@ -56,7 +56,7 @@ function FeaturesBlocks() {
 									</g>
 								</g>
 							</svg>
-							<h4 className="text-xl font-bold leading-snug tracking-tight mb-1">
+							<h4 className="theme-text text-xl font-bold leading-snug tracking-tight mb-1">
 								Initial Contact
 							</h4>
 							<p className="text-gray-600 text-center">

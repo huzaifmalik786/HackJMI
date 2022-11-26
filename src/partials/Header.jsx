@@ -2,11 +2,51 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useComponentSize } from "../hooks/useComponentSize";
 import Logo from "../images/logo.png";
-function Header() {
+function Header(props) {
 	const [top, setTop] = useState(true);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const menuRef = useRef(null);
 	const menuSize = useComponentSize(menuRef);
+
+	//switching between light and dark themes
+	const getCurrentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+	const [darktheme, setdarktheme] = useState(!getCurrentTheme);
+
+	useEffect(() =>{
+		changetheme();
+	},[]);
+	const changetheme=()=>{
+		setdarktheme(!darktheme);
+		props.x(darktheme);
+		if(!darktheme){
+			document.querySelectorAll(".b-color").forEach(element=>{
+				element.style.backgroundColor= "black";
+				element.style.transition= '0.5s';
+			})
+			document.querySelectorAll(".dk-color").forEach(element=>{
+				element.style.backgroundColor="#171717";
+				element.style.transition= '0.5s';
+			})
+			document.querySelectorAll(".theme-text").forEach(element=>{
+				element.style.color= "white";
+				element.style.transition= '0.5s';
+			})
+		}
+		else{
+			document.querySelectorAll(".b-color").forEach(element=>{
+				element.style.backgroundColor= "";
+				element.style.transition= '0.5s';
+			})
+			document.querySelectorAll(".dk-color").forEach(element=>{
+				element.style.backgroundColor="";
+				element.style.transition= '0.5s';
+			})
+			document.querySelectorAll(".theme-text").forEach(element=>{
+				element.style.color= "";
+				element.style.transition= '0.5s';
+			})
+		}
+	}
 
 	// detect whether user has scrolled the page down by 10px
 	useEffect(() => {
@@ -78,7 +118,7 @@ function Header() {
 	return (
 		<React.Fragment>
 			<div
-				className="md:hidden absolute z-10 bg-black/40 transition-all"
+				className=" b-color md:hidden absolute z-10 bg-black/40 transition-all"
 				style={{
 					top: menuSize?.height,
 					height: document.body.scrollHeight - menuSize?.height,
@@ -90,7 +130,7 @@ function Header() {
 			/>
 
 			<header
-				className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
+				className={`b-color fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
 					!top && "bg-white backdrop-blur-sm shadow-lg "
 				}`}
 				ref={menuRef}>
@@ -123,10 +163,27 @@ function Header() {
 									</li>
 								))}
 							</ul>
+
+							{/* theme button */}
+							<button onClick={changetheme}>
+								{!darktheme?(
+									<span style={{color: "#e69b00", fontSize: "35px", paddingLeft: "40px"}}>☀</span>
+								):
+								<span style={{color:"#c96dfd", fontSize: "35px", paddingLeft: "40px"}}>☽</span>
+								}
+							</button>
+							
 						</nav>
 
 						{/* Mobile menu button */}
 						<div className="md:hidden flex items-center">
+							<button onClick={changetheme}>
+								{!darktheme?(
+									<span style={{color: "#e69b00", fontSize: "30px", paddingRight: "22px"}}>☀</span>
+								):
+								<span style={{color:"#c96dfd", fontSize: "30px", paddingRight: "22px"}}>☽</span>
+								}
+							</button>
 							<button onClick={() => setIsNavOpen(!isNavOpen)}>
 								{!isNavOpen ? (
 									<svg
@@ -135,7 +192,7 @@ function Header() {
 										viewBox="0 0 24 24"
 										strokeWidth={1.5}
 										stroke="currentColor"
-										className="w-6 h-6">
+										className="theme-text w-6 h-6">
 										<path
 											strokeLinecap="round"
 											strokeLinejoin="round"
@@ -149,7 +206,7 @@ function Header() {
 										viewBox="0 0 24 24"
 										strokeWidth={1.5}
 										stroke="currentColor"
-										className="w-6 h-6">
+										className="theme-text w-6 h-6">
 										<path
 											strokeLinecap="round"
 											strokeLinejoin="round"
@@ -168,7 +225,7 @@ function Header() {
 								top: menuSize?.height,
 								maxHeight: !isNavOpen ? 0 : "100vh",
 							}}>
-							<div className="px-2 pt-2 pb-3 sm:px-3">
+							<div className=" b-color px-2 pt-2 pb-3 sm:px-3">
 								<ul className="flex flex-col flex-grow justify-end flex-wrap items-center">
 									{tabData.map((tab, index) => (
 										<li key={index}>

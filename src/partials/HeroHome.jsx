@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import Modal from '../utils/Modal';
+import React, { useState } from "react";
+import Modal from "../utils/Modal";
 
 // Images
-import IEEE from '../images/brands/ieeejmi.png';
-import GDSC from '../images/brands/gdscjmi.jpg';
-import Hashes from '../images/brands/hashes.png';
+import IEEE from "../images/brands/ieeejmi.png";
+import GDSC from "../images/brands/gdscjmi.jpg";
+import Hashes from "../images/brands/hashes.png";
+import IEEEwhite from "../images/brands/ieeewhite.png";
+import GDSCwhite from "../images/brands/gdscwhite.png";
 import Logo from "../images/logo.png";
-function HeroHome() {
+function HeroHome(props) {
+	const [videoModalOpen, setVideoModalOpen] = useState(false);
+	const isdarktheme = props.theme;
 
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
-
-  return (
+	return (
 		<section className="relative">
 			{/* Illustration behind hero content */}
 			<div
@@ -63,10 +65,10 @@ function HeroHome() {
 						</h1>
 						<div className="max-w-3xl mx-auto">
 							<p
-								className="text-xl text-gray-600 mb-8"
+								className="theme-text text-xl text-gray-600 mb-8"
 								data-aos="zoom-y-out"
 								data-aos-delay="150">
-								Hybrid Mode | 48 Hour Hackathon | 28th - 29th January 2023
+								Hybrid Mode | 48 Hour Hackathon | 11th - 12th February 2023
 							</p>
 							<div
 								className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center sm:items-center"
@@ -82,23 +84,35 @@ function HeroHome() {
 								</div>
 								<div>
 									<a
-										className="btn 
+										className="btn
 										font-semibold w-full sm:w-auto sm:ml-4 self-center hover:bg-gray-200"
 										href="#">
-										Sponsor Us
+										{!isdarktheme ? (
+											<span className="text-gray-600">Sponsor Us</span>
+										) : (
+											<span>Sponsor Us</span>
+										)}
 									</a>
 								</div>
 							</div>
 						</div>
 						<div className="max-w-3xl mx-auto flex flex-col">
-							<p className="text-gray-600 mt-12 text-sm">
+							<p className="theme-text text-gray-600 mt-36 text-sm">
 								in Collaboration with
 							</p>
-							<div className="flex justify-center flex-wrap items-center gap-4">
-								<img src={IEEE} className="w-32 h-32" />
-								<img src={GDSC} className="w-32 h-32" />
-								<img src={Hashes} className="w-32 h-32 scale-50" />
-							</div>
+							{isdarktheme ? (
+								<div className="flex justify-center flex-wrap items-center gap-4">
+									<img src={IEEE} className="w-32 h-32" />
+									<img src={GDSC} className="w-32 h-32" />
+									<img src={Hashes} className="w-32 h-32 scale-50" />
+								</div>
+							) : (
+								<div className="flex justify-center flex-wrap items-center gap-4">
+									<img src={IEEEwhite} className="w-32 h-32" />
+									<img src={GDSCwhite} className="w-33 h-12" />
+									<img src={Hashes} className="w-32 h-32 scale-50" />
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
