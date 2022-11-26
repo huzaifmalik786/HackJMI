@@ -61,7 +61,7 @@ function HeroHome(props) {
 								className="theme-text text-xl text-gray-600 mb-8"
 								data-aos="zoom-y-out"
 								data-aos-delay="150">
-								Hybrid Mode | 48 Hour Hackathon | 28th - 29th January 2023
+								Hybrid Mode | 48 Hour Hackathon | 11th - 12th February 2023
 							</p>
 							<div
 								className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center sm:items-center"

@@ -18,7 +18,7 @@ function Register() {
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="theme-text h2 mb-4">Register</h1>
 						<p className="text-gray-600 w-full text-left">
-							<div
+							{/* <div
 								className="apply-button self-center"
 								data-hackathon-slug="YOUR-HACKATHON-SLUG"
 								data-button-theme="light"></div>
@@ -39,7 +39,8 @@ function Register() {
 									5. Manage your team and submissions on your Devfolio hackathon
 									dashboard.
 								</li>
-							</ol>
+							</ol> */}
+							Coming Soon
 						</p>
 					</div>
 				</div>
