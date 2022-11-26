@@ -7,7 +7,7 @@ function Schedule() {
 
   const eventSchedule = [
 		{
-			interval: "1st December 2022",
+			interval: "10th December 2022",
 			title: "Registration Begins",
 			description: "",
 		},
