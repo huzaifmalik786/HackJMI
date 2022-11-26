@@ -38,14 +38,14 @@ function Home() {
 
 			{/*  Site footer */}
 			{/* <Footer /> */}
-			<div className="p-5 flex justify-around mt-16 border-t-2 ">
-				<p className="w-full">HACK JMI</p>
+			<div className="p-5 flex md:flex-row gap-10  flex-col justify-around mt-16 border-t-2 ">
+				<p className="w-full md:text-left text-center">HACK JMI</p>
 
 				<p className=" w-full flex justify-center">
 					Made with ❤️ by
 					<span className="text-orange-500 ml-2">HACK JMI Team</span>
 				</p>
-				<p className=" w-full justify-end flex">
+				<p className=" w-full justify-center md:justify-end flex">
 					<a href="https://jmi.ac.in">
 						<img src={JMI} className="w-10" />
 					</a>

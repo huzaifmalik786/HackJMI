@@ -86,6 +86,7 @@ function Header() {
 					opacity: isNavOpen ? 1 : 0,
 					pointerEvents: isNavOpen ? "all" : "none",
 				}}
+				onClick={() => setIsNavOpen(false)}
 			/>
 
 			<header
@@ -197,7 +198,8 @@ function Header() {
 												href={tab.href}
 												className={`font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out
 											${document.location.hash === tab.href && "text-orange-600 font-semibold"}
-										`}>
+										`}
+												onClick={() => setIsNavOpen(false)}>
 												{tab.name}
 											</a>
 										</li>

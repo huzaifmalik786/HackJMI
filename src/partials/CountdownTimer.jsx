@@ -5,25 +5,25 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 	// Render a countdown
 
 	return (
-		<div className="flex gap-5 w-full justify-center">
+		<div className="flex md:flex-row flex-col gap-5 w-full justify-center">
 			<div className="flex items-center gap-5 justify-center ">
-				<span className="text-4xl font-bold text-gray-900">{days}</span>
+				<span className="md:text-4xl font-bold text-gray-900">{days}</span>
 				<span className="text-gray-500">Days</span>
 			</div>
 			<div className="flex items-center gap-5 justify-center ">
-				<span className="text-4xl font-bold text-gray-900">{hours}</span>
+				<span className="md:text-4xl font-bold text-gray-900">{hours}</span>
 				<span className="text-gray-500">Hours</span>
 			</div>
 			<div className="flex items-center gap-5 justify-center ">
-				<span className="text-4xl font-bold text-gray-900">{minutes}</span>
+				<span className="md:text-4xl font-bold text-gray-900">{minutes}</span>
 				<span className="text-gray-500">Minutes</span>
 			</div>
 			<div className="flex items-center gap-5 justify-center ">
-				<span className="text-4xl font-bold text-gray-900">{seconds}</span>
+				<span className="md:text-4xl font-bold text-gray-900">{seconds}</span>
 				<span className="text-gray-500">Seconds</span>
 			</div>
 
-			<div className="self-center text-gray-500">Left!</div>
+			<div className="hidden md:block self-center text-gray-500">Left!</div>
 		</div>
 	);
 };
