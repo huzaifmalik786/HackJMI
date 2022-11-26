@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo, useContext } from "react";
 import Transition from "../utils/Transition";
 
 import Devfolio from "../images/sponsors/devfolio.png";
@@ -11,26 +11,26 @@ import Filecoinwhite from "../images/sponsors/filecoinwhite.png";
 import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
 import Polygonwhite from "../images/sponsors/polygonwhite.png";
 import Solanawhite from "../images/sponsors/solanawhite.png";
-
-
+import { DarkThemeContext } from "../pages/Home";
 
 function Sponsers(props) {
-	const isdarktheme= props.theme;
-	let sponsorData;
-	if(isdarktheme){
-		sponsorData = {
-			Platinum: [Devfolio, Polygon],
-			Gold: [],
-			Silver: [Filecoin, Solana, Replit],
-		};
-	}
-	else{
-		sponsorData = {
-			Platinum: [Devfoliowhite, Polygonwhite],
-			Gold: [],
-			Silver: [Filecoinwhite, Solanawhite, Replitwhite],
-		};
-	}
+	const { isDarkTheme } = useContext(DarkThemeContext);
+
+	let sponsorData = useMemo(() => {
+		if (!isDarkTheme) {
+			return {
+				Platinum: [Devfolio, Polygon],
+				Gold: [],
+				Silver: [Filecoin, Solana, Replit],
+			};
+		} else {
+			return {
+				Platinum: [Devfoliowhite, Polygonwhite],
+				Gold: [],
+				Silver: [Filecoinwhite, Solanawhite, Replitwhite],
+			};
+		}
+	}, [isDarkTheme]);
 
 	return (
 		<section className="relative" id="sponsors">

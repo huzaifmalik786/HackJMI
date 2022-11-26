@@ -1,52 +1,49 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useComponentSize } from "../hooks/useComponentSize";
 import Logo from "../images/logo.png";
-function Header(props) {
+import { DarkThemeContext } from "../pages/Home";
+function Header({ UpdateTheme }) {
 	const [top, setTop] = useState(true);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const menuRef = useRef(null);
 	const menuSize = useComponentSize(menuRef);
 
-	//switching between light and dark themes
-	const getCurrentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-	const [darktheme, setdarktheme] = useState(!getCurrentTheme);
+	const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);
 
-	useEffect(() =>{
-		changetheme();
-	},[]);
-	const changetheme=()=>{
-		setdarktheme(!darktheme);
-		props.x(darktheme);
-		if(!darktheme){
-			document.querySelectorAll(".b-color").forEach(element=>{
-				element.style.backgroundColor= "black";
-				element.style.transition= '0.5s';
-			})
-			document.querySelectorAll(".dk-color").forEach(element=>{
-				element.style.backgroundColor="#171717";
-				element.style.transition= '0.5s';
-			})
-			document.querySelectorAll(".theme-text").forEach(element=>{
-				element.style.color= "white";
-				element.style.transition= '0.5s';
-			})
+	//switching between light and dark themes
+
+	const ChangeTheme = () => {
+		UpdateTheme();
+
+		if (!isDarkTheme) {
+			document.querySelectorAll(".b-color").forEach((element) => {
+				element.style.backgroundColor = "black";
+				element.style.transition = "0.5s";
+			});
+			document.querySelectorAll(".dk-color").forEach((element) => {
+				element.style.backgroundColor = "#1f2121";
+				element.style.transition = "0.5s";
+			});
+			document.querySelectorAll(".theme-text").forEach((element) => {
+				element.style.color = "white";
+				element.style.transition = "0.5s";
+			});
+		} else {
+			document.querySelectorAll(".b-color").forEach((element) => {
+				element.style.backgroundColor = "";
+				element.style.transition = "0.5s";
+			});
+			document.querySelectorAll(".dk-color").forEach((element) => {
+				element.style.backgroundColor = "";
+				element.style.transition = "0.5s";
+			});
+			document.querySelectorAll(".theme-text").forEach((element) => {
+				element.style.color = "";
+				element.style.transition = "0.5s";
+			});
 		}
-		else{
-			document.querySelectorAll(".b-color").forEach(element=>{
-				element.style.backgroundColor= "";
-				element.style.transition= '0.5s';
-			})
-			document.querySelectorAll(".dk-color").forEach(element=>{
-				element.style.backgroundColor="";
-				element.style.transition= '0.5s';
-			})
-			document.querySelectorAll(".theme-text").forEach(element=>{
-				element.style.color= "";
-				element.style.transition= '0.5s';
-			})
-		}
-	}
+	};
 
 	// detect whether user has scrolled the page down by 10px
 	useEffect(() => {
@@ -75,14 +72,14 @@ function Header(props) {
 			name: "Sponsors",
 			href: "#sponsors",
 		},
-		{
-			name: "Register",
-			href: "#register",
-		},
-		{
-			name: "FAQ",
-			href: "#faq",
-		},
+		// {
+		// 	name: "Register",
+		// 	href: "#register",
+		// },
+		// {
+		// 	name: "FAQ",
+		// 	href: "#faq",
+		// },
 	]);
 
 	useEffect(() => {
@@ -165,24 +162,51 @@ function Header(props) {
 							</ul>
 
 							{/* theme button */}
-							<button onClick={changetheme}>
-								{!darktheme?(
-									<span style={{color: "#e69b00", fontSize: "35px", paddingLeft: "40px"}}>☀</span>
-								):
-								<span style={{color:"#c96dfd", fontSize: "35px", paddingLeft: "40px"}}>☽</span>
-								}
+							<button onClick={ChangeTheme}>
+								{!isDarkTheme ? (
+									<span
+										style={{
+											color: "#e69b00",
+											fontSize: "35px",
+											paddingLeft: "40px",
+										}}>
+										☀
+									</span>
+								) : (
+									<span
+										style={{
+											color: "#c96dfd",
+											fontSize: "35px",
+											paddingLeft: "40px",
+										}}>
+										☽
+									</span>
+								)}
 							</button>
-							
 						</nav>
 
 						{/* Mobile menu button */}
 						<div className="md:hidden flex items-center">
-							<button onClick={changetheme}>
-								{!darktheme?(
-									<span style={{color: "#e69b00", fontSize: "30px", paddingRight: "22px"}}>☀</span>
-								):
-								<span style={{color:"#c96dfd", fontSize: "30px", paddingRight: "22px"}}>☽</span>
-								}
+							<button onClick={ChangeTheme}>
+								{!isDarkTheme ? (
+									<span
+										style={{
+											color: "#e69b00",
+											fontSize: "30px",
+											paddingRight: "22px",
+										}}>
+										☀
+									</span>
+								) : (
+									<span
+										style={{
+											color: "#c96dfd",
+											fontSize: "30px",
+											paddingRight: "22px",
+										}}>
+										☽
+									</span>
+								)}
 							</button>
 							<button onClick={() => setIsNavOpen(!isNavOpen)}>
 								{!isNavOpen ? (

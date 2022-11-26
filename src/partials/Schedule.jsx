@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkThemeContext } from "../pages/Home";
 
 function Schedule(props) {
-	const isdarktheme = props.theme;
+	const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);
+
 	const eventSchedule = [
 		{
 			interval: "10th December 2022",
@@ -47,7 +49,7 @@ function Schedule(props) {
 									<div className="w-4 h-4 bg-white border-black border-2 ml-[1px] rounded-full " />
 									<div
 										className={`flex w-full flex-col border-l-2 ${
-											isdarktheme ? "border-black" : "border-white"
+											!isDarkTheme ? "border-black" : "border-white"
 										} mb-5 m-2`}>
 										<div className="theme-text pl-4 rounded-lg text-md  opacity-50">
 											{event.interval}

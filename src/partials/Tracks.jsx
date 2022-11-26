@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkThemeContext } from "../pages/Home";
 
 function FeaturesBlocks() {
+	const { setIsDarkTheme } = useContext(DarkThemeContext);
+
 	return (
 		<section className="relative" id="tracks">
 			{/* Section background (needs .relative class on parent and next sibling elements) */}
@@ -13,14 +16,14 @@ function FeaturesBlocks() {
 				<div className="py-12 md:py-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-						<h2 className="h2 mb-4">Tracks</h2>
+						<h2 className={`theme-text h2 mb-4`}>Tracks</h2>
 						<p className="text-xl italic text-gray-600">
 							Will be announced soon!
 						</p>
 					</div>
 
 					{/* Items */}
-					<div className="max-w-sm mx-auto hidden grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+					<div className="max-w-sm mx-auto hidden  gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
 						{/* 1st item */}
 						<div className=" dk-color relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
 							<svg

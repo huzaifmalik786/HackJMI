@@ -1,8 +1,9 @@
 import { Disclosure } from "@headlessui/react";
-import React from "react";
+import React, { useContext } from "react";
+import { DarkThemeContext } from "../pages/Home";
 
 function FAQ(props) {
-	const isdarktheme = props.theme;
+	const { isDarkTheme } = useContext(DarkThemeContext);
 	const faqData = [
 		{
 			question: "Is it an individual event or a team event?",
@@ -42,7 +43,7 @@ function FAQ(props) {
 				{faqData.map((faq, index) => (
 					<Disclosure as="div" key={index} className="theme-text w-full my-3">
 						{({ open }) =>
-							isdarktheme ? (
+							!isDarkTheme ? (
 								<React.Fragment>
 									<Disclosure.Button
 										className={`p-2 flex  w-full rounded-lg

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "../utils/Modal";
 
 // Images
@@ -8,9 +8,11 @@ import Hashes from "../images/brands/hashes.png";
 import IEEEwhite from "../images/brands/ieeewhite.png";
 import GDSCwhite from "../images/brands/gdscwhite.png";
 import Logo from "../images/logo.png";
+import { DarkThemeContext } from "../pages/Home";
 function HeroHome(props) {
 	const [videoModalOpen, setVideoModalOpen] = useState(false);
-	const isdarktheme = props.theme;
+
+	const { isDarkTheme } = useContext(DarkThemeContext);
 
 	return (
 		<section className="relative">
@@ -56,9 +58,11 @@ function HeroHome(props) {
 								#ACK
 							</span>
 							<span
-								className="text-white ml-4"
+								className="text-transparent ml-4"
 								style={{
-									"-webkit-text-stroke": "2px #494949",
+									"-webkit-text-stroke": isDarkTheme
+										? "2px #fff"
+										: "2px #494949",
 								}}>
 								JMI
 							</span>
@@ -87,11 +91,12 @@ function HeroHome(props) {
 										className="btn
 										font-semibold w-full sm:w-auto sm:ml-4 self-center hover:bg-gray-200"
 										href="#">
-										{!isdarktheme ? (
-											<span className="text-gray-600">Sponsor Us</span>
-										) : (
-											<span>Sponsor Us</span>
-										)}
+										<span
+											className={`
+											${!isDarkTheme ? "text-gray-600" : "text-gray-300"}
+											`}>
+											Sponsor Us
+										</span>
 									</a>
 								</div>
 							</div>
@@ -100,19 +105,20 @@ function HeroHome(props) {
 							<p className="theme-text text-gray-600 mt-36 text-sm">
 								in Collaboration with
 							</p>
-							{isdarktheme ? (
-								<div className="flex justify-center flex-wrap items-center gap-4">
-									<img src={IEEE} className="w-32 h-32" />
-									<img src={GDSC} className="w-32 h-32" />
-									<img src={Hashes} className="w-32 h-32 scale-50" />
-								</div>
-							) : (
-								<div className="flex justify-center flex-wrap items-center gap-4">
-									<img src={IEEEwhite} className="w-32 h-32" />
-									<img src={GDSCwhite} className="w-33 h-12" />
-									<img src={Hashes} className="w-32 h-32 scale-50" />
-								</div>
-							)}
+							<div className="flex justify-center flex-wrap items-center gap-4">
+								{!isDarkTheme ? (
+									<React.Fragment>
+										<img src={IEEE} className="w-32 h-32" />
+										<img src={GDSC} className="w-32 h-32" />
+									</React.Fragment>
+								) : (
+									<React.Fragment>
+										<img src={IEEEwhite} className="w-32 h-32" />
+										<img src={GDSCwhite} className="w-32 h-32 object-contain" />
+									</React.Fragment>
+								)}
+								<img src={Hashes} className="w-32 h-32 scale-50" />
+							</div>
 						</div>
 					</div>
 				</div>
