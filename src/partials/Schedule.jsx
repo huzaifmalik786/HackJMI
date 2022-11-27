@@ -15,11 +15,11 @@ function Schedule(props) {
 			title: "Registration Ends",
 		},
 		{
-			interval: "10th Feb 2023",
+			interval: "11th Feb 2023",
 			title: "Hackathon Begins",
 		},
 		{
-			interval: "11th Feb 2023",
+			interval: "12th Feb 2023",
 			title: "Hackathon Ends",
 		},
 		{
