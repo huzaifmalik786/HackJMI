@@ -93,7 +93,8 @@ function HeroHome(props) {
 									<a
 										className="btn
 										font-semibold w-full sm:w-auto sm:ml-4 self-center hover:bg-gray-200"
-										href="#">
+										href="https://drive.google.com/file/d/1rygr-fCBemNPIAhNjEM8bg3mOGGT99Zr/view?usp=sharing"
+										target="_blank">
 										<span
 											className={`
 											${!isDarkTheme ? "text-gray-900" : "text-gray-600"}
@@ -117,7 +118,10 @@ function HeroHome(props) {
 									</React.Fragment>
 								) : (
 									<React.Fragment>
-										<img src={IEEECSwhite} className="w-32 h-32 object-contain" />
+										<img
+											src={IEEECSwhite}
+											className="w-32 h-32 object-contain"
+										/>
 										<img src={IEEEwhite} className="w-32 h-32" />
 										<img src={GDSCwhite} className="w-32 h-32 object-contain" />
 									</React.Fragment>
