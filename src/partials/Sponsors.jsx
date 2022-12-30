@@ -6,6 +6,8 @@ import Polygon from "../images/sponsors/polygon.png";
 import Filecoin from "../images/sponsors/filecoin.png";
 import Solana from "../images/sponsors/solana.png";
 import Replit from "../images/sponsors/replit.png";
+import GMC from "../images/sponsors/GMC.png";
+import NS from "../images/sponsors/NS.png";
 import Replitwhite from "../images/sponsors/replitwhite.png";
 import Filecoinwhite from "../images/sponsors/filecoinwhite.png";
 import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
@@ -20,14 +22,14 @@ function Sponsers(props) {
 		if (!isDarkTheme) {
 			return {
 				Platinum: [Devfolio, Polygon],
-				Gold: [],
-				Silver: [Filecoin, Solana, Replit],
+				// Gold: [],
+				Silver: [Filecoin, Solana, Replit, NS],
 			};
 		} else {
 			return {
 				Platinum: [Devfoliowhite, Polygonwhite],
-				Gold: [],
-				Silver: [Filecoinwhite, Solanawhite, Replitwhite],
+				// Gold: [],
+				Silver: [Filecoinwhite, Solanawhite, Replitwhite, NS],
 			};
 		}
 	}, [isDarkTheme]);
@@ -51,13 +53,19 @@ function Sponsers(props) {
 								<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
 								<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => (
-										<div className="w-1/3 md:w-1/4 p-2">
+										<div className="w-1/3 md:w-1/5 p-2">
 											<img src={sponsor} className="w-full" />
 										</div>
 									))}
 								</div>
 							</div>
 						))}
+						<h1 className="theme-text h4 my-5">Certificate Partner</h1>
+						<div className="flex justify-center items-center">
+							<div className="w-1/6">
+								<img src={GMC}/>
+							</div>
+						</div>
 					</div>
 				</div>
 
