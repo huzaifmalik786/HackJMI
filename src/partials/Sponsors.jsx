@@ -8,6 +8,7 @@ import Solana from "../images/sponsors/solana.png";
 import Replit from "../images/sponsors/replit.png";
 import GMC from "../images/sponsors/GMC.png";
 import NS from "../images/sponsors/NS.png";
+import GOG from "../images/sponsors/GOG.png";
 import Replitwhite from "../images/sponsors/replitwhite.png";
 import Filecoinwhite from "../images/sponsors/filecoinwhite.png";
 import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
@@ -23,13 +24,13 @@ function Sponsers(props) {
 			return {
 				Platinum: [Devfolio, Polygon],
 				// Gold: [],
-				Silver: [Filecoin, Solana, Replit, NS],
+				Silver: [Filecoin, Solana, Replit,GOG,NS],
 			};
 		} else {
 			return {
 				Platinum: [Devfoliowhite, Polygonwhite],
 				// Gold: [],
-				Silver: [Filecoinwhite, Solanawhite, Replitwhite, NS],
+				Silver: [Filecoinwhite, Solanawhite, Replitwhite,GOG,NS],
 			};
 		}
 	}, [isDarkTheme]);
@@ -51,13 +52,24 @@ function Sponsers(props) {
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
 								<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
-								<div className="flex flex-wrap justify-center items-center gap-4">
+								{key=="Silver"?(
+									<div className="flex flex-wrap justify-center items-center gap-4">
+									{sponsorData[key].map((sponsor) => (
+										<div className="w-1/4 md:w-1/6 p-2">
+											<img src={sponsor} className="w-full" />
+										</div>
+									))}
+									</div>
+								):(
+									<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => (
 										<div className="w-1/3 md:w-1/5 p-2">
 											<img src={sponsor} className="w-full" />
 										</div>
 									))}
-								</div>
+									</div>
+								)}
+								
 							</div>
 						))}
 						<h1 className="theme-text h4 my-5">Certificate Partner</h1>
