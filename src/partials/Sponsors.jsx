@@ -50,10 +50,13 @@ function Sponsers(props) {
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="theme-text h2 mb-4">Sponsors</h1>
-
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
-								<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
+								<div className="flex w-full flex-row items-center justify-center">
+									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+									<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
+									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+								</div>
 								{key=="Silver"?(
 									<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => (
@@ -74,7 +77,11 @@ function Sponsers(props) {
 								
 							</div>
 						))}
-						<h1 className="theme-text h4 my-5">Certificate Partner</h1>
+						<div className="flex w-full flex-row items-center justify-center">
+							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+							<h1 className="theme-text h4 my-5">Certificate Partner</h1>
+							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+						</div>
 						<div className="flex justify-center items-center">
 							<div className="w-1/6">
 								<img src={GMC}/>
