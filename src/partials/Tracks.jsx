@@ -24,7 +24,7 @@ function FeaturesBlocks() {
 						<p className="py-5 flex flex-wrap justify-center">
 							{tracksData.map((track, index) => {
 								return (
-									<div className="w-1/3 p-2">
+									<div className="w-full md:w-1/3 p-2">
 										<div
 											className="p-3 w-full h-full flex flex-col  group border-t-4 
 											border-black

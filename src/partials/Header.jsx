@@ -69,6 +69,10 @@ function Header({ UpdateTheme }) {
 			href: "#schedule",
 		},
 		{
+			name: "Prizes",
+			href: "#prizes",
+		},
+		{
 			name: "Sponsors",
 			href: "#sponsors",
 		},
