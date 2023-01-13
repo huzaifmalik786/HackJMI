@@ -17,7 +17,7 @@ function FeaturesBlocks() {
 				<div className="py-12 md:py-20">
 					{/* Section header */}
 					<div className="mx-auto text-center pb-12 md:pb-20">
-						<h2 className={`theme-text h2 mb-4`}>Tracks</h2>
+						<h2 className={`dark:text-white h2 mb-4`}>Tracks</h2>
 						{/* <p className="text-xl italic text-gray-600">
 							Will be announced soon!
 						</p> */}
@@ -33,19 +33,28 @@ function FeaturesBlocks() {
 											shadow-none transition-all
 											 hover:scale-95
 										">
+											<div
+												className={`text-orange-600 `}
+												style={{
+													textShadow: "0px 0px 10px #ffa6005e",
+												}}>
+												{track?.featured && "✨"} {track?.featured}
+											</div>
 											<div className="flex gap-2">
 												<track.icon className="w-6 h-6 self-center dark:text-white" />
 												<h1
 													className="py-2 self-center text-xl font-semibold dark:text-white
-												
 												">
 													{track.title}
 												</h1>
 											</div>
 											<div className="flex flex-col">
-												<p className="text-justify text-gray-500">
-													{track.description}
-												</p>
+												<div
+													className="text-justify text-gray-500 track-description"
+													dangerouslySetInnerHTML={{
+														__html: track.description,
+													}}
+												/>
 											</div>
 										</div>
 									</div>
@@ -91,12 +100,7 @@ function FeaturesBlocks() {
 									</g>
 								</g>
 							</svg>
-							<h4 className="theme-text text-xl font-bold leading-snug tracking-tight mb-1">
-								Initial Contact
-							</h4>
-							<p className="text-gray-600 text-center">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</p>
+							x{" "}
 						</div>
 					</div>
 				</div>

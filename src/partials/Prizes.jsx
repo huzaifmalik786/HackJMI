@@ -8,7 +8,7 @@ function Prizes() {
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center ">
-						<h1 className="theme-text h2 mb-4">Prizes</h1>
+						<h1 className="dark:text-white h2 mb-4">Prizes</h1>
 						<div className="flex flex-col">
 							<div className="flex items-center dark:text-white gap-10 justify-center w-full md:pb-12 pb-16">
 								<div className="w-1/5">
@@ -39,7 +39,7 @@ function Prizes() {
 									</div>
 								</div>
 							</div>
-							<p className="text-gray-600 text-center italic">
+							<p className="text-gray-600 dark:text-gray-200 text-center italic">
 								Winners will also get INR 5k+ worth of goodies from our
 								sponsors.
 							</p>

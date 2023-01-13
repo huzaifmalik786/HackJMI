@@ -9,9 +9,9 @@ import { DiTechcrunch } from "react-icons/di";
 const Tracks = [
 	{
 		id: 1,
+		featured: "M16 Labs Featured Problem Statement",
 		title: "Healthcare",
-		description:
-			"Solution(s) to improve current hospital infrastructure in India. Solution(s) for common health care problem in India. Solution(s) for making healthcare more accessible to common public.",
+		description: `Solution/Improvement based upon the Core Healthcare Technology of M16Labs. <a href='https://m16labs.com/' >M16Labs</a> #HealthyIndia through #HealthyYou by Making Care & Wellness Accessible.`,
 		icon: GiTechnoHeart,
 	},
 	{

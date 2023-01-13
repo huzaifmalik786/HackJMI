@@ -36,6 +36,14 @@ function Home() {
 		}
 	}, [isDarkTheme]);
 
+	useEffect(() => {
+		if (document.documentElement.classList.contains("dark")) {
+			setIsDarkTheme(true);
+		} else {
+			setIsDarkTheme(false);
+		}
+	}, []);
+
 	return (
 		<DarkThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
 			<div

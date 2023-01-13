@@ -11,40 +11,6 @@ function Header({ UpdateTheme }) {
 
 	const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);
 
-	//switching between light and dark themes
-
-	const ChangeTheme = () => {
-		UpdateTheme();
-
-		if (!isDarkTheme) {
-			document.querySelectorAll(".b-color").forEach((element) => {
-				element.style.backgroundColor = "black";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".dk-color").forEach((element) => {
-				element.style.backgroundColor = "#1f2121";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".theme-text").forEach((element) => {
-				element.style.color = "white";
-				element.style.transition = "0.5s";
-			});
-		} else {
-			document.querySelectorAll(".b-color").forEach((element) => {
-				element.style.backgroundColor = "";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".dk-color").forEach((element) => {
-				element.style.backgroundColor = "";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".theme-text").forEach((element) => {
-				element.style.color = "";
-				element.style.transition = "0.5s";
-			});
-		}
-	};
-
 	// detect whether user has scrolled the page down by 10px
 	useEffect(() => {
 		const scrollHandler = () => {
@@ -75,6 +41,10 @@ function Header({ UpdateTheme }) {
 		{
 			name: "Sponsors",
 			href: "#sponsors",
+		},
+		{
+			name: "Community Partner",
+			href: "#community-partners",
 		},
 		{
 			name: "Register",
@@ -131,7 +101,7 @@ function Header({ UpdateTheme }) {
 			/>
 
 			<header
-				className={`b-color fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
+				className={`dark:bg-black fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
 					!top && "bg-white backdrop-blur-sm shadow-lg "
 				}`}
 				ref={menuRef}>
@@ -140,12 +110,8 @@ function Header({ UpdateTheme }) {
 						{/* Site branding */}
 						<div className="flex-shrink-0 mr-4">
 							{/* Logo */}
-
 							<a href="#" className="flex gap-2" aria-label="Cruip">
 								<img src={Logo} alt="Logo" className="w-14" />
-
-								{/* <p className="self-center font-bold text-orange-600">#ACK</p>
-								<p className="self-center font-semibold">JMI</p> */}
 							</a>
 						</div>
 
@@ -166,7 +132,7 @@ function Header({ UpdateTheme }) {
 							</ul>
 
 							{/* theme button */}
-							<button onClick={ChangeTheme}>
+							<button onClick={UpdateTheme}>
 								{!isDarkTheme ? (
 									<span
 										style={{
@@ -191,7 +157,7 @@ function Header({ UpdateTheme }) {
 
 						{/* Mobile menu button */}
 						<div className="md:hidden flex items-center">
-							<button onClick={ChangeTheme}>
+							<button onClick={UpdateTheme}>
 								{!isDarkTheme ? (
 									<span
 										style={{
