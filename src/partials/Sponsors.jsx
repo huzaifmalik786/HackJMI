@@ -6,6 +6,11 @@ import Polygon from "../images/sponsors/polygon.png";
 import Filecoin from "../images/sponsors/filecoin.png";
 import Solana from "../images/sponsors/solana.png";
 import Replit from "../images/sponsors/replit.png";
+import GMC from "../images/sponsors/GMC.png";
+import NS from "../images/sponsors/NS.png";
+import GOG from "../images/sponsors/GOG.png";
+import xyz from "../images/sponsors/xyz.png";
+import xyzwhite from "../images/sponsors/xyzwhite.png";
 import Replitwhite from "../images/sponsors/replitwhite.png";
 import Filecoinwhite from "../images/sponsors/filecoinwhite.png";
 import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
@@ -20,14 +25,14 @@ function Sponsers(props) {
 		if (!isDarkTheme) {
 			return {
 				Platinum: [Devfolio, Polygon],
-				Gold: [],
-				Silver: [Filecoin, Solana, Replit],
+				// Gold: [],
+				Silver: [Filecoin, Solana, Replit,GOG,NS,xyz],
 			};
 		} else {
 			return {
 				Platinum: [Devfoliowhite, Polygonwhite],
-				Gold: [],
-				Silver: [Filecoinwhite, Solanawhite, Replitwhite],
+				// Gold: [],
+				Silver: [Filecoinwhite, Solanawhite, Replitwhite,GOG,NS,xyzwhite],
 			};
 		}
 	}, [isDarkTheme]);
@@ -45,19 +50,43 @@ function Sponsers(props) {
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="theme-text h2 mb-4">Sponsors</h1>
-
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
-								<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
-								<div className="flex flex-wrap justify-center items-center gap-4">
+								<div className="flex w-full flex-row items-center justify-center">
+									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+									<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
+									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+								</div>
+								{key=="Silver"?(
+									<div className="flex flex-wrap justify-center items-center gap-4">
+									{sponsorData[key].map((sponsor) => (
+										<div className="w-1/4 md:w-1/5 p-2">
+											<img src={sponsor} className="w-full" />
+										</div>
+									))}
+									</div>
+								):(
+									<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => (
 										<div className="w-1/3 md:w-1/4 p-2">
 											<img src={sponsor} className="w-full" />
 										</div>
 									))}
-								</div>
+									</div>
+								)}
+								
 							</div>
 						))}
+						<div className="flex w-full flex-row items-center justify-center">
+							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+							<h1 className="theme-text h4 my-5">Certificate Partner</h1>
+							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+						</div>
+						<div className="flex justify-center items-center">
+							<div className="w-1/6">
+								<img src={GMC}/>
+							</div>
+						</div>
 					</div>
 				</div>
 
