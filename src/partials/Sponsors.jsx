@@ -26,13 +26,13 @@ function Sponsers(props) {
 			return {
 				Platinum: [Devfolio, Polygon],
 				// Gold: [],
-				Silver: [Filecoin, Solana, Replit,GOG,NS,xyz],
+				Silver: [Filecoin, Solana, Replit, GOG, NS, xyz],
 			};
 		} else {
 			return {
 				Platinum: [Devfoliowhite, Polygonwhite],
 				// Gold: [],
-				Silver: [Filecoinwhite, Solanawhite, Replitwhite,GOG,NS,xyzwhite],
+				Silver: [Filecoinwhite, Solanawhite, Replitwhite, GOG, NS, xyzwhite],
 			};
 		}
 	}, [isDarkTheme]);
@@ -40,10 +40,6 @@ function Sponsers(props) {
 	return (
 		<section className="relative" id="sponsors">
 			{/* Section background (needs .relative class on parent and next sibling elements) */}
-			<div
-				className=" b-color absolute inset-0 bg-gray-100 pointer-events-none mb-16"
-				aria-hidden="true"></div>
-			<div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
 
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
 				<div className="pt-12 md:pt-20">
@@ -53,38 +49,53 @@ function Sponsers(props) {
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
 								<div className="flex w-full flex-row items-center justify-center">
-									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+									<hr
+										className={`w-20 m-2 ${
+											!isDarkTheme ? "border-black" : "border-white"
+										}`}
+									/>
 									<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
-									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+									<hr
+										className={`w-20 m-2 ${
+											!isDarkTheme ? "border-black" : "border-white"
+										}`}
+									/>
 								</div>
-								{key=="Silver"?(
+								{key == "Silver" ? (
 									<div className="flex flex-wrap justify-center items-center gap-4">
-									{sponsorData[key].map((sponsor) => (
-										<div className="w-1/4 md:w-1/5 p-2">
-											<img src={sponsor} className="w-full" />
-										</div>
-									))}
+										{sponsorData[key].map((sponsor) => (
+											<div className="w-1/4 md:w-1/5 p-2">
+												<img src={sponsor} className="w-full" />
+											</div>
+										))}
 									</div>
-								):(
+								) : (
 									<div className="flex flex-wrap justify-center items-center gap-4">
-									{sponsorData[key].map((sponsor) => (
-										<div className="w-1/3 md:w-1/4 p-2">
-											<img src={sponsor} className="w-full" />
-										</div>
-									))}
+										{sponsorData[key].map((sponsor) => (
+											<div className="w-1/3 md:w-1/4 p-2">
+												<img src={sponsor} className="w-full" />
+											</div>
+										))}
 									</div>
 								)}
-								
 							</div>
 						))}
 						<div className="flex w-full flex-row items-center justify-center">
-							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+							<hr
+								className={`w-20 m-2 ${
+									!isDarkTheme ? "border-black" : "border-white"
+								}`}
+							/>
 							<h1 className="theme-text h4 my-5">Certificate Partner</h1>
-							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+							<hr
+								className={`w-20 m-2 ${
+									!isDarkTheme ? "border-black" : "border-white"
+								}`}
+							/>
 						</div>
 						<div className="flex justify-center items-center">
 							<div className="w-1/6">
-								<img src={GMC}/>
+								<img src={GMC} />
 							</div>
 						</div>
 					</div>

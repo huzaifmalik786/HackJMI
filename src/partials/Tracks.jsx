@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DarkThemeContext } from "../pages/Home";
+import tracksData from "../data/tracks";
 
 function FeaturesBlocks() {
 	const { setIsDarkTheme } = useContext(DarkThemeContext);
@@ -15,10 +16,41 @@ function FeaturesBlocks() {
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
 				<div className="py-12 md:py-20">
 					{/* Section header */}
-					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+					<div className="mx-auto text-center pb-12 md:pb-20">
 						<h2 className={`theme-text h2 mb-4`}>Tracks</h2>
-						<p className="text-xl italic text-gray-600">
+						{/* <p className="text-xl italic text-gray-600">
 							Will be announced soon!
+						</p> */}
+						<p className="py-5 flex flex-wrap justify-center">
+							{tracksData.map((track, index) => {
+								return (
+									<div className="w-1/3 p-2">
+										<div
+											className="p-3 w-full h-full flex flex-col  group border-t-4 
+											border-black
+											dark:border-white/40
+											dark:rounded-none
+											shadow-none transition-all
+											 hover:scale-95
+										">
+											<div className="flex gap-2">
+												<track.icon className="w-6 h-6 self-center dark:text-white" />
+												<h1
+													className="py-2 self-center text-xl font-semibold dark:text-white
+												
+												">
+													{track.title}
+												</h1>
+											</div>
+											<div className="flex flex-col">
+												<p className="text-justify text-gray-500">
+													{track.description}
+												</p>
+											</div>
+										</div>
+									</div>
+								);
+							})}
 						</p>
 					</div>
 
