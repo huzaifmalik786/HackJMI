@@ -70,9 +70,9 @@ function Home() {
 				{/*  Site footer */}
 				{/* <Footer /> */}
 				<div className="b-color p-5 flex flex-col md:flex-row gap-2 justify-between items-center mt-16 border-t-2 ">
-					<p className="theme-text">HACK JMI</p>
+					<p className="dark:text-white">HACK JMI</p>
 
-					<p className="theme-text flex justify-center">
+					<p className="theme-text flex justify-center dark:text-white">
 						Made with ❤️ by
 						<span className="text-orange-500 ml-2">HACK JMI Team</span>
 					</p>
