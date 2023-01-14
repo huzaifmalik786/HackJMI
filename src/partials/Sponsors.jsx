@@ -114,24 +114,25 @@ function Sponsers(props) {
 								<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => {
 										return (
-											<div
+											<button
 												className={`w-1/3 
 												${SponsorStyles[key]}
-											p-2`}>
-												<Link to={sponsor.src} target="_blank">
-													{isDarkTheme ? (
-														<img
-															src={sponsor.dark}
-															className="w-full rounded-md"
-														/>
-													) : (
-														<img
-															src={sponsor.light}
-															className="w-full rounded-md"
-														/>
-													)}
-												</Link>
-											</div>
+											p-2`}
+												onClick={() => {
+													window.open(sponsor.src, "_blank");
+												}}>
+												{isDarkTheme ? (
+													<img
+														src={sponsor.dark}
+														className="w-full rounded-md"
+													/>
+												) : (
+													<img
+														src={sponsor.light}
+														className="w-full rounded-md"
+													/>
+												)}
+											</button>
 										);
 									})}
 								</div>
