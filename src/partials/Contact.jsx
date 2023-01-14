@@ -42,7 +42,7 @@ function Contact() {
 
 	return (
 		<section className="relative" id="prizes">
-			<div className="relative max-w-6xl mx-auto ">
+			<div className="relative max-w-6xl mx-auto p-6">
 				<div className="pt-12 md:pt-20 dark:text-white">
 					{/* Section header */}
 					<div className="w-full flex-col md:flex-row flex">
