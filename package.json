@@ -7,9 +7,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@headlessui/react": "^1.7.4",
     "@tailwindcss/forms": "^0.5.2",
     "aos": "^3.0.0-beta.6",
+    "firebase": "^9.15.0",
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",

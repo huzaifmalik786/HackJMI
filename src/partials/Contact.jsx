@@ -1,7 +1,45 @@
-import React from "react";
-import { BsLinkedin, BsInstagram, BsDiscord } from "react-icons/bs";
+import React, { useState } from "react";
+import { BsLinkedin, BsInstagram, BsDiscord, BsCheck } from "react-icons/bs";
+import { useForm } from "react-hook-form";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
+	const { register, handleSubmit, reset } = useForm();
+
+	const [isSubmitted, setIsSubmitted] = useState(false);
+
+	const onSubmit = async (data) => {
+		console.log(data);
+		try {
+			const contactRef = doc(db, "contact", window.crypto.randomUUID());
+
+			await setDoc(contactRef, data);
+		} catch (err) {
+			console.log(err);
+		}
+
+		try {
+			await emailjs.send(
+				"Contact",
+				"template_bavbiho",
+				{
+					name: data.name,
+					email: data.email,
+					message: data.message,
+				},
+				"Q3VwV4o9qJyU-lxvV"
+			);
+		} catch (err) {
+			console.log(err);
+		} finally {
+			setIsSubmitted(true);
+
+			reset();
+		}
+	};
+
 	return (
 		<section className="relative" id="prizes">
 			<div className="relative max-w-6xl mx-auto ">
@@ -46,8 +84,10 @@ function Contact() {
 								</div>
 							</div>
 						</div>
-						<form className="md:w-2/3 p-10 bg-gray-100 dark:bg-transparent rounded-xl dark:text-white flex flex-wrap ">
-							<div className="w-1/2 px-2">
+						<form
+							className="md:w-2/3 p-10 bg-gray-100 dark:bg-transparent rounded-xl dark:text-white flex flex-wrap"
+							onSubmit={handleSubmit(onSubmit)}>
+							<div className="md:w-1/2 px-2">
 								<label className="block text-sm font-medium text-gray-700/50 dark:text-white">
 									Name
 								</label>
@@ -55,9 +95,10 @@ function Contact() {
 									type="text"
 									className="w-full p-3 rounded-lg border-2 border-gray-300 bg-transparent focus:outline-none focus:border-gray-400"
 									placeholder="Name"
+									{...register("name")}
 								/>
 							</div>
-							<div className="w-1/2 px-2">
+							<div className="md:w-1/2 px-2">
 								<label className="block text-sm font-medium text-gray-700/50 dark:text-white">
 									Email
 								</label>
@@ -65,6 +106,7 @@ function Contact() {
 									type="text"
 									className="w-full p-3 rounded-lg border-2 border-gray-300 bg-transparent focus:outline-none focus:border-gray-400"
 									placeholder="Email"
+									{...register("email")}
 								/>
 							</div>
 							<div className="w-full px-2 mt-4">
@@ -76,9 +118,18 @@ function Contact() {
 									className="w-full p-3 rounded-lg border-2 border-gray-300 bg-transparent focus:outline-none focus:border-gray-400 resize-none"
 									placeholder="Message"
 									rows={5}
+									{...register("message")}
 								/>
 							</div>
 							<div className="flex justify-end w-full px-2 mt-5">
+								<div
+									className="self-center pr-5 italic opacity-40 text-xs
+                                    flex
+                                "
+									style={{ display: isSubmitted ? "flex" : "none" }}>
+									<BsCheck className="self-center w-5 h-5" />
+									your response have been submitted
+								</div>
 								<button
 									className="bg-gray-800 hover:translate-y-1 transition-all text-white px-5 py-2 rounded-lg
                                     dark:bg-gradient-to-bl dark:from-orange-400 dark:to-orange-600
