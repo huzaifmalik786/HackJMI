@@ -108,7 +108,7 @@ function Sponsers(props) {
 							<div className="w-full flex flex-col items-center mt-5">
 								<div className="flex w-full flex-row items-center justify-center">
 									<hr className={`w-20 m-2 dark:text-white`} />
-									<h1 className="dark:text-white h4 my-5">{key}</h1>
+									<h1 className="dark:text-white h4 my-5 text-xl md:text-2xl">{key}</h1>
 									<hr className={`w-20 m-2 dark:text-white`} />
 								</div>
 								<div className="flex flex-wrap justify-center items-center gap-4">
