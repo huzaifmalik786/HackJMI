@@ -33,7 +33,7 @@ function FAQ(props) {
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center ">
-						<h1 className="theme-text h2" id="faq">
+						<h1 className="dark:text-white h2" id="faq">
 							FAQ
 						</h1>
 					</div>
@@ -41,64 +41,39 @@ function FAQ(props) {
 
 				{/* FAQ */}
 				{faqData.map((faq, index) => (
-					<Disclosure as="div" key={index} className="theme-text w-full my-3">
-						{({ open }) =>
-							!isDarkTheme ? (
-								<React.Fragment>
-									<Disclosure.Button
-										className={`p-2 flex  w-full rounded-lg
-									${open ? "bg-orange-200" : "hover:bg-gray-200"} 
+					<Disclosure as="div" key={index} className=" w-full my-3">
+						{({ open }) => (
+							<React.Fragment>
+								<Disclosure.Button
+									className={`p-2 flex  w-full rounded-lg
+									${
+										open
+											? "bg-orange-300 dark:bg-gray-600"
+											: "hover:bg-orange-200 dark:hover:bg-gray-900"
+									} 
 								`}>
-										<span className="theme-tex">{faq.question}</span>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="currentColor"
-											className="w-6 h-6 ml-auto"
-											style={{
-												transform: open ? "rotate(180deg)" : "",
-											}}>
-											<path
-												fillRule="evenodd"
-												d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-												clipRule="evenodd"
-											/>
-										</svg>
-									</Disclosure.Button>
-									<Disclosure.Panel
-										className="p-4 bg-orange-200/30"
-										dangerouslySetInnerHTML={{ __html: faq.answer }}
-									/>
-								</React.Fragment>
-							) : (
-								<React.Fragment>
-									<Disclosure.Button
-										className={`p-2 flex  w-full rounded-lg
-									${open ? "bg-gray-600" : "hover:bg-gray-900"} 
-								`}>
-										<span className="theme-tex">{faq.question}</span>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="currentColor"
-											className="w-6 h-6 ml-auto"
-											style={{
-												transform: open ? "rotate(180deg)" : "",
-											}}>
-											<path
-												fillRule="evenodd"
-												d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-												clipRule="evenodd"
-											/>
-										</svg>
-									</Disclosure.Button>
-									<Disclosure.Panel
-										className="p-4 bg-gray-600/30"
-										dangerouslySetInnerHTML={{ __html: faq.answer }}
-									/>
-								</React.Fragment>
-							)
-						}
+									<span className="dark:text-white">{faq.question}</span>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="currentColor"
+										className="w-6 h-6 ml-auto"
+										style={{
+											transform: open ? "rotate(180deg)" : "",
+										}}>
+										<path
+											fillRule="evenodd"
+											d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+											clipRule="evenodd"
+										/>
+									</svg>
+								</Disclosure.Button>
+								<Disclosure.Panel
+									className="p-4 bg-orange-100 dark:text-white dark:bg-gray-600/30"
+									dangerouslySetInnerHTML={{ __html: faq.answer }}
+								/>
+							</React.Fragment>
+						)}
 					</Disclosure>
 				))}
 			</div>

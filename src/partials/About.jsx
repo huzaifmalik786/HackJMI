@@ -6,18 +6,12 @@ function Features() {
 
 	return (
 		<section className="relative" id="about">
-			{/* Section background (needs .relative class on parent and next sibling elements) */}
-			<div
-				className="b-color absolute inset-0 bg-gray-100 pointer-events-none mb-16"
-				aria-hidden="true"></div>
-			<div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
-
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-						<h1 className="theme-text h2 mb-4">About Us</h1>
-						<p className="text-xl text-gray-600">
+						<h1 className="dark:text-white h2 mb-4">About Us</h1>
+						<p className="md:text-xl text-gray-600 dark:text-gray-300 mt-5">
 							With the coding infatuation high in your nerves, brace yourself to
 							witness and participate in a{" "}
 							<strong>"48-hour long hackathon"</strong>,{" "}

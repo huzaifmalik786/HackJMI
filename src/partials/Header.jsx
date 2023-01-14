@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useComponentSize } from "../hooks/useComponentSize";
 import Logo from "../images/logo.png";
 import { DarkThemeContext } from "../pages/Home";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { AiOutlineClose } from "react-icons/ai";
+
 function Header({ UpdateTheme }) {
 	const [top, setTop] = useState(true);
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -10,40 +13,6 @@ function Header({ UpdateTheme }) {
 	const menuSize = useComponentSize(menuRef);
 
 	const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);
-
-	//switching between light and dark themes
-
-	const ChangeTheme = () => {
-		UpdateTheme();
-
-		if (!isDarkTheme) {
-			document.querySelectorAll(".b-color").forEach((element) => {
-				element.style.backgroundColor = "black";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".dk-color").forEach((element) => {
-				element.style.backgroundColor = "#1f2121";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".theme-text").forEach((element) => {
-				element.style.color = "white";
-				element.style.transition = "0.5s";
-			});
-		} else {
-			document.querySelectorAll(".b-color").forEach((element) => {
-				element.style.backgroundColor = "";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".dk-color").forEach((element) => {
-				element.style.backgroundColor = "";
-				element.style.transition = "0.5s";
-			});
-			document.querySelectorAll(".theme-text").forEach((element) => {
-				element.style.color = "";
-				element.style.transition = "0.5s";
-			});
-		}
-	};
 
 	// detect whether user has scrolled the page down by 10px
 	useEffect(() => {
@@ -68,9 +37,17 @@ function Header({ UpdateTheme }) {
 			name: "Schedule",
 			href: "#schedule",
 		},
+		// {
+		// 	name: "Prizes",
+		// 	href: "#prizes",
+		// },
 		{
 			name: "Sponsors",
 			href: "#sponsors",
+		},
+		{
+			name: "Community Partner",
+			href: "#community-partners",
 		},
 		{
 			name: "Register",
@@ -127,7 +104,7 @@ function Header({ UpdateTheme }) {
 			/>
 
 			<header
-				className={`b-color fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
+				className={`dark:bg-black fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
 					!top && "bg-white backdrop-blur-sm shadow-lg "
 				}`}
 				ref={menuRef}>
@@ -136,12 +113,8 @@ function Header({ UpdateTheme }) {
 						{/* Site branding */}
 						<div className="flex-shrink-0 mr-4">
 							{/* Logo */}
-
 							<a href="#" className="flex gap-2" aria-label="Cruip">
 								<img src={Logo} alt="Logo" className="w-14" />
-
-								{/* <p className="self-center font-bold text-orange-600">#ACK</p>
-								<p className="self-center font-semibold">JMI</p> */}
 							</a>
 						</div>
 
@@ -162,7 +135,7 @@ function Header({ UpdateTheme }) {
 							</ul>
 
 							{/* theme button */}
-							<button onClick={ChangeTheme}>
+							<button onClick={UpdateTheme}>
 								{!isDarkTheme ? (
 									<span
 										style={{
@@ -187,7 +160,7 @@ function Header({ UpdateTheme }) {
 
 						{/* Mobile menu button */}
 						<div className="md:hidden flex items-center">
-							<button onClick={ChangeTheme}>
+							<button onClick={UpdateTheme}>
 								{!isDarkTheme ? (
 									<span
 										style={{
@@ -210,33 +183,9 @@ function Header({ UpdateTheme }) {
 							</button>
 							<button onClick={() => setIsNavOpen(!isNavOpen)}>
 								{!isNavOpen ? (
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth={1.5}
-										stroke="currentColor"
-										className="theme-text w-6 h-6">
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-										/>
-									</svg>
+									<RxHamburgerMenu className="dark:text-white w-6 h-6" />
 								) : (
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth={1.5}
-										stroke="currentColor"
-										className="theme-text w-6 h-6">
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M6 18L18 6M6 6l12 12"
-										/>
-									</svg>
+									<AiOutlineClose className="dark:text-white w-6 h-6" />
 								)}
 							</button>
 						</div>
@@ -244,7 +193,7 @@ function Header({ UpdateTheme }) {
 						{/* Mobile menu */}
 
 						<div
-							className={`md:hidden absolute w-full bg-white shadow-lg overflow-hidden transition-all`}
+							className={`md:hidden absolute w-full bg-white dark:bg-gray-900 dark:text-white shadow-lg overflow-hidden transition-all`}
 							style={{
 								top: menuSize?.height,
 								maxHeight: !isNavOpen ? 0 : "100vh",
@@ -255,8 +204,12 @@ function Header({ UpdateTheme }) {
 										<li key={index}>
 											<a
 												href={tab.href}
-												className={`font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out
-											${document.location.hash === tab.href && "text-orange-600 font-semibold"}
+												className={`font-medium text-gray-600 dark:text-gray-400 
+												hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out
+											${
+												document.location.hash === tab.href &&
+												"text-orange-600 dark:text-orange-600 font-semibold"
+											}
 										`}
 												onClick={() => setIsNavOpen(false)}>
 												{tab.name}

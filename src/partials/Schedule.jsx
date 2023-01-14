@@ -26,16 +26,11 @@ function Schedule(props) {
 
 	return (
 		<section className="relative" id="schedule">
-			{/* Section background (needs .relative class on parent and next sibling elements) */}
-			<div
-				className="b-color absolute inset-0 bg-gray-100 pointer-events-none mb-16"
-				aria-hidden="true"></div>
-
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center ">
-						<h1 className="theme-text h2 mb-4">Schedule</h1>
+						<h1 className="dark:text-white h2 mb-4">Schedule</h1>
 						<div className="flex flex-col  w-full md:pb-12 pb-16">
 							<p className="italic text-gray-500">
 								{"("} Dates are tentative and subject to change {")"}
@@ -44,32 +39,20 @@ function Schedule(props) {
 								<div>
 									<div className="w-4 h-4 bg-white border-black border-2 ml-[1px] rounded-full " />
 									<div
-										className={`flex w-full flex-col border-l-2 ${
-											!isDarkTheme ? "border-black" : "border-white"
-										} mb-5 m-2`}>
-										<div className="theme-text pl-4 rounded-lg text-md  opacity-50">
+										className={`flex w-full flex-col border-l-2 dark:border-white mb-5 m-2`}>
+										<div className="dark:text-gray-200 pl-4 rounded-lg text-md  opacity-50">
 											{event.interval}
 										</div>
-										<div className="theme-text p-4 pb-1 text-xl rounded-lg text-black font-semibold">
+										<div className="dark:text-white p-4 pb-1 text-xl rounded-lg text-black font-semibold">
 											{event.title}
 										</div>
-										<div className="text-left pl-4 pt-2">
+										<div className="dark:text-gray-100 pl-4 pt-2">
 											{event?.description}
 										</div>
 									</div>
 								</div>
 							))}
 						</div>
-						{/* <Fragment>
-							<Timeline>
-								{eventSchedule.map((event, index) => (
-									<Event
-										interval={event.interval}
-										title={event.title}
-										subtitle={event.description}></Event>
-								))}
-							</Timeline>
-						</Fragment> */}
 					</div>
 				</div>
 			</div>

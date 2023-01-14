@@ -84,7 +84,7 @@ const renderer = ({
 };
 
 function CountdownTimer() {
-	const date = new Date("2023-01-28T00:00:00+05:30");
+	const date = new Date("2023-02-11T00:00:00+05:30");
 
 	const { isDarkTheme } = useContext(DarkThemeContext);
 

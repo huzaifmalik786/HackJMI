@@ -16,77 +16,151 @@ import Filecoinwhite from "../images/sponsors/filecoinwhite.png";
 import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
 import Polygonwhite from "../images/sponsors/polygonwhite.png";
 import Solanawhite from "../images/sponsors/solanawhite.png";
+import M16Labs from "../images/sponsors/m16labs-logo.png";
+import { CgCommunity } from "react-icons/cg";
+
 import { DarkThemeContext } from "../pages/Home";
+import { Link } from "react-router-dom";
 
 function Sponsers(props) {
 	const { isDarkTheme } = useContext(DarkThemeContext);
 
-	let sponsorData = useMemo(() => {
-		if (!isDarkTheme) {
-			return {
-				Platinum: [Devfolio, Polygon],
-				// Gold: [],
-				Silver: [Filecoin, Solana, Replit,GOG,NS,xyz],
-			};
-		} else {
-			return {
-				Platinum: [Devfoliowhite, Polygonwhite],
-				// Gold: [],
-				Silver: [Filecoinwhite, Solanawhite, Replitwhite,GOG,NS,xyzwhite],
-			};
-		}
-	}, [isDarkTheme]);
+	let sponsorData = {
+		"Title Sponsor": [
+			{
+				dark: M16Labs,
+				light: M16Labs,
+				src: "https://m16labs.com/",
+			},
+		],
+		"Platinum Sponsors": [
+			{
+				dark: Devfoliowhite,
+				light: Devfolio,
+				src: "https://devfolio.co/",
+			},
+			{
+				dark: Polygonwhite,
+				light: Polygon,
+				src: "https://polygon.technology/",
+			},
+		],
+		// "Gold Sponsors": [],
+		"Silver Sponsors": [
+			{
+				dark: Filecoinwhite,
+				light: Filecoin,
+				src: "https://filecoin.io/",
+			},
+			{
+				dark: Solanawhite,
+				light: Solana,
+				src: "https://solana.com/",
+			},
+			{
+				dark: Replitwhite,
+				light: Replit,
+				src: "https://replit.com/",
+			},
+			{
+				dark: GOG,
+				light: GOG,
+				src: "https://www.geeksforgeeks.org/",
+			},
+			{
+				dark: NS,
+				light: NS,
+				src: "https://www.newtonschool.co/",
+			},
+			{
+				dark: xyzwhite,
+				light: xyz,
+				src: "https://gen.xyz/",
+			},
+		],
+		"Certificate Partners": [
+			{
+				dark: GMC,
+				light: GMC,
+				src: "https://givemycertificate.com/",
+			},
+		],
+	};
+
+	const SponsorStyles = {
+		"Title Sponsor": "w-1/2 md:w-40",
+		"Platinum Sponsors": "w-1/2 md:w-1/4 lg:w-1/5",
+		"Gold Sponsors": "w-1/2 md:w-1/4 lg:w-1/5",
+		"Silver Sponsors": "w-1/2 md:w-1/4 lg:w-1/5",
+		"Certificate Partners": "w-1/2 md:w-1/4 lg:w-1/5",
+	};
 
 	return (
 		<section className="relative" id="sponsors">
 			{/* Section background (needs .relative class on parent and next sibling elements) */}
-			<div
-				className=" b-color absolute inset-0 bg-gray-100 pointer-events-none mb-16"
-				aria-hidden="true"></div>
-			<div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
 
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-						<h1 className="theme-text h2 mb-4">Sponsors</h1>
+						<h1 className="dark:text-white h2 mb-4">Sponsors</h1>
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
 								<div className="flex w-full flex-row items-center justify-center">
-									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
-									<h1 className="theme-text h4 my-5">{key} Sponsors</h1>
-									<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
+									<hr className={`w-20 m-2 dark:text-white`} />
+									<h1 className="dark:text-white h4 my-5">{key}</h1>
+									<hr className={`w-20 m-2 dark:text-white`} />
 								</div>
-								{key=="Silver"?(
-									<div className="flex flex-wrap justify-center items-center gap-4">
-									{sponsorData[key].map((sponsor) => (
-										<div className="w-1/4 md:w-1/5 p-2">
-											<img src={sponsor} className="w-full" />
-										</div>
-									))}
-									</div>
-								):(
-									<div className="flex flex-wrap justify-center items-center gap-4">
-									{sponsorData[key].map((sponsor) => (
-										<div className="w-1/3 md:w-1/4 p-2">
-											<img src={sponsor} className="w-full" />
-										</div>
-									))}
-									</div>
-								)}
-								
+								<div className="flex flex-wrap justify-center items-center gap-4">
+									{sponsorData[key].map((sponsor) => {
+										return (
+											<div
+												className={`w-1/3 
+												${SponsorStyles[key]}
+											p-2`}>
+												<Link to={sponsor.src} target="_blank">
+													{isDarkTheme ? (
+														<img
+															src={sponsor.dark}
+															className="w-full rounded-md"
+														/>
+													) : (
+														<img
+															src={sponsor.light}
+															className="w-full rounded-md"
+														/>
+													)}
+												</Link>
+											</div>
+										);
+									})}
+								</div>
 							</div>
 						))}
-						<div className="flex w-full flex-row items-center justify-center">
-							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
-							<h1 className="theme-text h4 my-5">Certificate Partner</h1>
-							<hr className={`w-20 m-2 ${!isDarkTheme? "border-black": "border-white"}`}/>
-						</div>
-						<div className="flex justify-center items-center">
-							<div className="w-1/6">
-								<img src={GMC}/>
-							</div>
-						</div>
+					</div>
+				</div>
+				<div className="border" />
+				<div
+					className="max-w-3xl mx-auto flex flex-col justify-center items-center text-center pb-12 md:pb-16 md:pt-16"
+					id="community-partners">
+					<CgCommunity className="w-16 h-16 text-orange-600/50 dark:text-white/30 mb-2" />
+					<h1 className="dark:text-white h3 mb-4">Community Partners</h1>
+					<p className="text-gray-600 dark:text-white/50">
+						We are looking for community partners to help us spread the word
+						about the event. If you are interested in partnering with us, Fill
+						out the form below!
+					</p>
+					<div>
+						<button
+							className="btn btn-primary mt-4 bg-orange-600 hover:scale-95
+								hover:shadow-xl hover:shadow-orange-600/10 hover:bg-orange-700
+								transition-all my-5
+								text-white"
+							onClick={() => {
+								window.open("https://bit.ly/hackjmi-partner", "_blank");
+							}}>
+							Fill Community Partner Form
+						</button>
 					</div>
 				</div>
 
