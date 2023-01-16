@@ -149,7 +149,7 @@ function Sponsers(props) {
 				<div
 					className="max-w-3xl mx-auto flex flex-col justify-center items-center text-center pb-12 md:pb-16 md:pt-16"
 					id="community-partners">
-					<CgCommunity className="w-16 h-16 text-orange-600/50 mb-2" />
+					<CgCommunity className="w-16 h-16 text-orange-600/50 dark:text-white/30 mb-2" />
 					<h1 className="dark:text-white h3 mb-4">Community Partners</h1>
 					<p className="text-gray-600 dark:text-white/50">
 						We are looking for community partners to help us spread the word

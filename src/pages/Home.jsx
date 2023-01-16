@@ -61,7 +61,7 @@ function Home() {
 					<About />
 					<Tracks />
 					<Schedule />
-					<Prizes />
+					{/* <Prizes /> */}
 					<Sponsors />
 					<Register />
 					<FAQ />

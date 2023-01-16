@@ -97,7 +97,7 @@ function HeroHome(props) {
 										target="_blank">
 										<span
 											className={`
-											${!isDarkTheme ? "text-gray-900" : "text-gray-600"}
+											dark:text-white
 											`}>
 											Sponsor Us
 										</span>
