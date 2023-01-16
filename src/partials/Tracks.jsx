@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { DarkThemeContext } from "../pages/Home";
 import tracksData from "../data/tracks";
+import { motion } from "framer-motion";
+import TrackCard from "../components/Tracks/Card";
 
 function FeaturesBlocks() {
 	const { setIsDarkTheme } = useContext(DarkThemeContext);
@@ -17,48 +19,15 @@ function FeaturesBlocks() {
 				<div className="py-12 md:py-20">
 					{/* Section header */}
 					<div className="mx-auto text-center pb-12 md:pb-20">
-						<h2 className={`dark:text-white h2 mb-4`}>Tracks</h2>
+						<h2 className={`dark:text-white h2 mb-4`} data-aos="fade-right">
+							Tracks
+						</h2>
 						{/* <p className="text-xl italic text-gray-600">
 							Will be announced soon!
 						</p> */}
 						<p className="py-5 flex flex-wrap justify-center">
 							{tracksData.map((track, index) => {
-								return (
-									<div className="w-full md:w-1/3 p-2">
-										<div
-											className="p-3 w-full h-full flex flex-col  group border-t-4 
-											border-black
-											dark:border-white/40
-											dark:rounded-none
-											shadow-none transition-all
-											 hover:scale-95
-										">
-											<div
-												className={`text-orange-600 `}
-												style={{
-													textShadow: "0px 0px 10px #ffa6005e",
-												}}>
-												{track?.featured && "✨"} {track?.featured}
-											</div>
-											<div className="flex gap-2">
-												<track.icon className="w-6 h-6 self-center dark:text-white" />
-												<h1
-													className="py-2 self-center text-xl font-semibold dark:text-white
-												">
-													{track.title}
-												</h1>
-											</div>
-											<div className="flex flex-col">
-												<div
-													className="text-justify text-gray-500 track-description"
-													dangerouslySetInnerHTML={{
-														__html: track.description,
-													}}
-												/>
-											</div>
-										</div>
-									</div>
-								);
+								return <TrackCard key={index} track={track} index={index} />;
 							})}
 						</p>
 					</div>

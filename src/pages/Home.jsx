@@ -18,6 +18,7 @@ import Discord from "../images/brands/discord.png";
 import Discordwhite from "../images/brands/discordwhite.png";
 import CountdownTimer from "../partials/CountdownTimer";
 import Prizes from "../partials/Prizes";
+import Contact from "../partials/Contact";
 
 export const DarkThemeContext = React.createContext({
 	isDarkTheme: false,
@@ -64,6 +65,7 @@ function Home() {
 					<Sponsors />
 					<Register />
 					<FAQ />
+					<Contact />
 					{/* < />  */}
 				</main>
 
@@ -72,7 +74,7 @@ function Home() {
 				<div className="b-color p-5 flex flex-col md:flex-row gap-2 justify-between items-center mt-16 border-t-2 ">
 					<p className="dark:text-white">HACK JMI</p>
 
-					<p className="dark:text-white flex justify-center">
+					<p className="theme-text flex justify-center dark:text-white">
 						Made with ❤️ by
 						<span className="text-orange-500 ml-2">HACK JMI Team</span>
 					</p>
