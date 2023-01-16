@@ -29,7 +29,7 @@ function Schedule(props) {
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
-					<div className="max-w-3xl mx-auto text-center ">
+					<div className="max-w-3xl mx-auto text-center " data-aos="flip-right">
 						<h1 className="dark:text-white h2 mb-4">Schedule</h1>
 						<div className="flex flex-col  w-full md:pb-12 pb-16">
 							<p className="italic text-gray-500">

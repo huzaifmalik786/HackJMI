@@ -103,35 +103,41 @@ function Sponsers(props) {
 				<div className="pt-12 md:pt-20">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-						<h1 className="dark:text-white h2 mb-4">Sponsors</h1>
+						<h1 className="dark:text-white h2 mb-4" data-aos="zoom-in">
+							Sponsors
+						</h1>
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
 								<div className="flex w-full flex-row items-center justify-center">
 									<hr className={`w-20 m-2 dark:text-white`} />
-									<h1 className="dark:text-white h4 my-5 text-xl md:text-2xl">{key}</h1>
+									<h1 className="dark:text-white h4 my-5 text-xl md:text-2xl">
+										{key}
+									</h1>
 									<hr className={`w-20 m-2 dark:text-white`} />
 								</div>
 								<div className="flex flex-wrap justify-center items-center gap-4">
 									{sponsorData[key].map((sponsor) => {
 										return (
-											<div
+											<button
 												className={`w-1/3 
 												${SponsorStyles[key]}
-											p-2`}>
-												<Link to={sponsor.src} target="_blank">
-													{isDarkTheme ? (
-														<img
-															src={sponsor.dark}
-															className="w-full rounded-md"
-														/>
-													) : (
-														<img
-															src={sponsor.light}
-															className="w-full rounded-md"
-														/>
-													)}
-												</Link>
-											</div>
+											p-2`}
+												data-aos="fade-up"
+												onClick={() => {
+													window.open(sponsor.src, "_blank");
+												}}>
+												{isDarkTheme ? (
+													<img
+														src={sponsor.dark}
+														className="w-full rounded-md"
+													/>
+												) : (
+													<img
+														src={sponsor.light}
+														className="w-full rounded-md"
+													/>
+												)}
+											</button>
 										);
 									})}
 								</div>

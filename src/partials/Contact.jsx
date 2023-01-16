@@ -4,14 +4,16 @@ import { useForm } from "react-hook-form";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import emailjs from "@emailjs/browser";
+import { formState } from "../utils/constant";
 
 function Contact() {
 	const { register, handleSubmit, reset } = useForm();
 
-	const [isSubmitted, setIsSubmitted] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(formState.IDLE);
 
 	const onSubmit = async (data) => {
 		console.log(data);
+		setIsSubmitted(formState.LOADING);
 		try {
 			const contactRef = doc(db, "contact", window.crypto.randomUUID());
 
@@ -34,7 +36,7 @@ function Contact() {
 		} catch (err) {
 			console.log(err);
 		} finally {
-			setIsSubmitted(true);
+			setIsSubmitted(formState.SUCCESS);
 
 			reset();
 		}
@@ -46,7 +48,9 @@ function Contact() {
 				<div className="pt-12 md:pt-20 dark:text-white">
 					{/* Section header */}
 					<div className="w-full flex-col md:flex-row flex">
-						<div className="md:w-1/3 bg-gradient-to-br from-orange-400 to-orange-600 p-10 rounded-l-lg rounded-lg">
+						<div
+							className="md:w-1/3 bg-gradient-to-br from-orange-400 to-orange-600 p-10 rounded-l-lg rounded-lg"
+							data-aos="fade-left">
 							<h1 className="text-xl font-semibold text-white border-b-4 inline-block">
 								Get In Touch
 							</h1>
@@ -86,7 +90,8 @@ function Contact() {
 						</div>
 						<form
 							className="md:w-2/3 p-10 bg-gray-100 dark:bg-transparent rounded-xl dark:text-white flex flex-wrap"
-							onSubmit={handleSubmit(onSubmit)}>
+							onSubmit={handleSubmit(onSubmit)}
+							data-aos="fade-right">
 							<div className="md:w-1/2 px-2">
 								<label className="block text-sm font-medium text-gray-700/50 dark:text-white">
 									Name
@@ -131,10 +136,14 @@ function Contact() {
 									your response have been submitted
 								</div>
 								<button
-									className="bg-gray-800 hover:translate-y-1 transition-all text-white px-5 py-2 rounded-lg
+									className={`bg-gray-800 hover:translate-y-1 transition-all text-white px-5 py-2 rounded-lg
                                     dark:bg-gradient-to-bl dark:from-orange-400 dark:to-orange-600
-                                ">
-									Send
+                                ${
+																	isSubmitted === formState.LOADING &&
+																	"opacity-50"
+																} `}
+									disabled={isSubmitted === formState.LOADING}>
+									{isSubmitted === formState.LOADING ? "Sending.." : "Send"}
 								</button>
 							</div>
 						</form>

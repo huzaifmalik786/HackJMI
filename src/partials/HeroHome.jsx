@@ -72,7 +72,7 @@ function HeroHome(props) {
 						</h1>
 						<div className="max-w-3xl mx-auto">
 							<p
-								className="theme-text text-xl text-gray-600 mb-8"
+								className="dark:text-white text-xl text-gray-600 mb-8"
 								data-aos="zoom-y-out"
 								data-aos-delay="150">
 								Hybrid Mode | 48 Hour Hackathon | 11th - 12th February 2023

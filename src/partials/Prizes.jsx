@@ -16,12 +16,12 @@ const state = {
 
 function Prizes() {
 	const { isDarkTheme } = useContext(DarkThemeContext);
-	const [active, setActive] = React.useState(state.prizes);
+	const [active, setActive] = React.useState(state.swags);
 
 	return (
 		<section className="relative" id="prizes">
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-				<div className="pt-12 md:pt-20">
+				<div className="pt-12 md:pt-20" data-aos="flip-right">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center ">
 						<h1 className="dark:text-white h2 mb-4">Prizes</h1>

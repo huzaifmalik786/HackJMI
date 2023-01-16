@@ -7,7 +7,7 @@ function Features() {
 	return (
 		<section className="relative" id="about">
 			<div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-				<div className="pt-12 md:pt-20">
+				<div className="pt-12 md:pt-20" data-aos="zoom-out">
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="dark:text-white h2 mb-4">About Us</h1>

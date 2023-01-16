@@ -22,7 +22,7 @@ function FAQ(props) {
 	];
 
 	return (
-		<section className="relative">
+		<section className="relative" data-aos="fade">
 			{/* Section background (needs .relative class on parent and next sibling elements) */}
 			<div
 				className="b-color absolute inset-0 pointer-events-none mb-16"
