@@ -11,7 +11,7 @@ function Features() {
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="dark:text-white h2 mb-4">About Us</h1>
-						<p className="text-xl text-gray-600 dark:text-gray-300 mt-5">
+						<p className="md:text-xl text-gray-600 dark:text-gray-300 mt-5">
 							With the coding infatuation high in your nerves, brace yourself to
 							witness and participate in a{" "}
 							<strong>"48-hour long hackathon"</strong>,{" "}
