@@ -1,7 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { DarkThemeContext } from "../pages/Home";
 import Transition from "../utils/Transition";
 
 function Register() {
+
+	const {isDarkTheme} = useContext(DarkThemeContext);
+
 	return (
 		<section className="relative" id="register">
 			{/* Section background (needs .relative class on parent and next sibling elements) */}
@@ -10,14 +14,20 @@ function Register() {
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="dark:text-white h2 mb-4">Register</h1>
-						<p className="text-gray-600 w-full text-left">
-							{/* <div
+						<p className="text-gray-600 dark:text-white w-full text-left">
+							{
+								isDarkTheme ? 
+								<div
 								className="apply-button self-center"
-								data-hackathon-slug="YOUR-HACKATHON-SLUG"
+								data-hackathon-slug="hack-jmi"
+								data-button-theme="dark"></div>
+								: 
+								<div
+								className="apply-button self-center"
+								data-hackathon-slug="hack-jmi"
 								data-button-theme="light"></div>
-
-							<div className="italic">Coming Soon</div>
-							{/* <strong>To register, follow these steps:</strong>
+							}
+							<strong>To register, follow these steps:</strong>
 							<ol className="flex flex-col gap-2 mt-4">
 								<li>1. Click the "Apply with Devfolio" button below</li>
 								<li>
@@ -33,8 +43,8 @@ function Register() {
 									5. Manage your team and submissions on your Devfolio hackathon
 									dashboard.
 								</li>
-							</ol> */}
-							Coming Soon
+							</ol>
+							{/* Coming Soon */}
 						</p>
 					</div>
 				</div>
