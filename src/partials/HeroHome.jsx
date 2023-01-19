@@ -9,6 +9,8 @@ import IEEEwhite from "../images/brands/ieeewhite.png";
 import GDSCwhite from "../images/brands/gdscwhite.png";
 import IEEECS from "../images/brands/ieeecs.png";
 import IEEECSwhite from "../images/brands/ieeecswhite.png";
+import Whatsapp from "../images/brands/Whatsapplogo.png";
+import Discord from "../images/brands/discordlogo.png"
 
 import Logo from "../images/logo.png";
 import { DarkThemeContext } from "../pages/Home";
@@ -91,8 +93,8 @@ function HeroHome(props) {
 								</div>
 								<div>
 									<a
-										className="btn
-										font-semibold w-full sm:w-auto sm:ml-4 self-center hover:bg-gray-200"
+										className={`btn
+										font-semibold w-full sm:w-auto sm:ml-4 self-center ${isDarkTheme?"hover:bg-gray-600":"hover:bg-gray-200"}`}
 										href="https://drive.google.com/file/d/1rygr-fCBemNPIAhNjEM8bg3mOGGT99Zr/view?usp=sharing"
 										target="_blank">
 										<span
@@ -101,6 +103,19 @@ function HeroHome(props) {
 											`}>
 											Sponsor Us
 										</span>
+									</a>
+								</div>
+							</div>
+							<div className="mt-4 flex flex-col items-center"
+								data-aos="zoom-y-out"
+								data-aos-delay="300">
+								<p className="theme-text text-gray-600 text-sm">Join our Community</p>
+								<div className="flex gap-5 mt-2">
+									<a href="https://chat.whatsapp.com/F6k9ATiCBqUJJgQTE8TAyi" target="_blank">
+										<img src={Whatsapp} className="w-10 hover:scale-90 transition-all"/>
+									</a>
+									<a href="https://bit.ly/hackjmi-discord" target="_blank">
+										<img src={Discord} className="w-10 hover:scale-90 transition-all ml-2"/>
 									</a>
 								</div>
 							</div>

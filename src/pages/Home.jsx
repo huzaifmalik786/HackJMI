@@ -16,6 +16,8 @@ import Insta from "../images/brands/instagram.png";
 import Instawhite from "../images/brands/instagramwhite.png";
 import Discord from "../images/brands/discord.png";
 import Discordwhite from "../images/brands/discordwhite.png";
+import Whatsapp from "../images/brands/whatsapp.png"
+import Whatsappwhite from "../images/brands/Whatsappwhite.png";
 import CountdownTimer from "../partials/CountdownTimer";
 import Prizes from "../partials/Prizes";
 import Contact from "../partials/Contact";
@@ -82,6 +84,9 @@ function Home() {
 					</p>
 					{!isDarkTheme ? (
 						<p className="items-center flex gap-4">
+							<a href="https://chat.whatsapp.com/F6k9ATiCBqUJJgQTE8TAyi">
+								<img src={Whatsapp} className="w-8"/>
+							</a>
 							<a href="https://www.instagram.com/hackjmi/">
 								<img src={Insta} className="w-8.5" />
 							</a>
@@ -91,13 +96,17 @@ function Home() {
 							<a href="https://jmi.ac.in">
 								<img src={JMI} className="w-10" />
 							</a>
+							
 						</p>
 					) : (
 						<p className="items-center flex gap-4">
+							<a href="https://chat.whatsapp.com/F6k9ATiCBqUJJgQTE8TAyi">
+								<img src={Whatsappwhite} className="w-7"/>
+							</a>
 							<a href="https://www.instagram.com/hackjmi/">
 								<img src={Instawhite} className="w-7" />
 							</a>
-							<a href="https://discord.gg/KEA8uHxC">
+							<a href="https://bit.ly/hackjmi-discord">
 								<img src={Discordwhite} className="w-8" />
 							</a>
 							<a href="https://jmi.ac.in">
