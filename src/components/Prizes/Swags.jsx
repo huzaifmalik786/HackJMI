@@ -6,6 +6,7 @@ import m16 from "../../images/sponsors/m16labs-logo.png";
 import Logo from "../../images/logo.png";
 import { motion } from "framer-motion";
 import { DarkThemeContext } from "../../pages/Home";
+import ThemeImage from "../Image";
 
 function Swags() {
 	const { isDarkTheme } = useContext(DarkThemeContext);
@@ -60,9 +61,10 @@ function Swags() {
 					</div>
 				</div>
 				<div className="md:w-1/5 w-3/4 flex flex-col justify-center items-center">
-					<img
-						src={isDarkTheme ? `${XYZwhite}` : `${XYZ}`}
-						className="w-40  md:mb-4 md:p-5 p-3"
+					<ThemeImage
+						dark={XYZwhite}
+						light={XYZ}
+						className={"w-40  md:mb-4 md:p-5 p-3"}
 					/>
 					<div className="mt-6">
 						<p className=" dark:text-white/60">

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo, useContext } from "react";
 import Transition from "../utils/Transition";
+import ThemeImage from "../components/Image";
 
 import Devfolio from "../images/sponsors/devfolio.png";
 import Polygon from "../images/sponsors/polygon.png";
@@ -17,6 +18,8 @@ import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
 import Polygonwhite from "../images/sponsors/polygonwhite.png";
 import Solanawhite from "../images/sponsors/solanawhite.png";
 import M16Labs from "../images/sponsors/m16labs-logo.png";
+import Axure from "../images/sponsors/axure.png";
+import Streamyard from "../images/sponsors/streamyard.png";
 
 import { DarkThemeContext } from "../pages/Home";
 import { Link } from "react-router-dom";
@@ -62,6 +65,11 @@ function Sponsers(props) {
 				src: "https://replit.com/",
 			},
 			{
+				dark: Streamyard,
+				light: Streamyard,
+				src: "https://streamyard.com/"
+			},
+			{
 				dark: GOG,
 				light: GOG,
 				src: "https://www.geeksforgeeks.org/",
@@ -76,6 +84,12 @@ function Sponsers(props) {
 				light: xyz,
 				src: "https://gen.xyz/",
 			},
+			{
+				dark: Axure,
+				light: Axure,
+				src: "https://www.axure.com/"
+			}
+			
 		],
 		"Certificate Partners": [
 			{
@@ -107,7 +121,7 @@ function Sponsers(props) {
 						</h1>
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
-								<div className="flex w-full flex-row items-center justify-center">
+								<div className="flex w-full flex-row items-center justify-center mb-2">
 									<hr className={`w-20 m-2 dark:text-white`} />
 									<h1 className="dark:text-white h4 my-5 text-xl md:text-2xl">
 										{key}
@@ -125,17 +139,11 @@ function Sponsers(props) {
 												onClick={() => {
 													window.open(sponsor.src, "_blank");
 												}}>
-												{isDarkTheme ? (
-													<img
-														src={sponsor.dark}
-														className="w-full rounded-md"
+													<ThemeImage
+														dark={sponsor.dark}
+														light={sponsor.light}
+														className={"w-full rounded-md"}
 													/>
-												) : (
-													<img
-														src={sponsor.light}
-														className="w-full rounded-md"
-													/>
-												)}
 											</button>
 										);
 									})}
