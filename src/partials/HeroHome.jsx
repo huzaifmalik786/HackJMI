@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import Modal from "../utils/Modal";
 
 // Images
 import IEEE from "../images/brands/ieeejmi.png";
@@ -9,11 +8,11 @@ import IEEEwhite from "../images/brands/ieeewhite.png";
 import GDSCwhite from "../images/brands/gdscwhite.png";
 import IEEECS from "../images/brands/ieeecs.png";
 import IEEECSwhite from "../images/brands/ieeecswhite.png";
-import Whatsapp from "../images/brands/Whatsapplogo.png";
-import Discord from "../images/brands/discordlogo.png"
-
 import Logo from "../images/logo.png";
 import { DarkThemeContext } from "../pages/Home";
+import { FaDiscord, FaWhatsapp } from "react-icons/fa";
+import ThemeImage from "../components/Image";
+
 function HeroHome(props) {
 	const [videoModalOpen, setVideoModalOpen] = useState(false);
 
@@ -112,10 +111,10 @@ function HeroHome(props) {
 								<p className="theme-text text-gray-600 text-sm">Join our Community</p>
 								<div className="flex gap-5 mt-2">
 									<a href="https://chat.whatsapp.com/F6k9ATiCBqUJJgQTE8TAyi" target="_blank">
-										<img src={Whatsapp} className="w-10 hover:scale-90 transition-all"/>
+										<FaWhatsapp className="w-10 h-10 dark:text-white hover:scale-90 transition-all"/>
 									</a>
 									<a href="https://bit.ly/hackjmi-discord" target="_blank">
-										<img src={Discord} className="w-10 hover:scale-90 transition-all ml-2"/>
+										<FaDiscord className="w-10 h-10 dark:text-white hover:scale-90 transition-all"/>
 									</a>
 								</div>
 							</div>
@@ -125,22 +124,21 @@ function HeroHome(props) {
 								in Collaboration with
 							</p>
 							<div className="flex justify-center flex-wrap items-center gap-4">
-								{!isDarkTheme ? (
-									<React.Fragment>
-										<img src={IEEECS} className="w-32 h-32 object-contain" />
-										<img src={IEEE} className="w-32 h-32" />
-										<img src={GDSC} className="w-32 h-32" />
-									</React.Fragment>
-								) : (
-									<React.Fragment>
-										<img
-											src={IEEECSwhite}
-											className="w-32 h-32 object-contain"
-										/>
-										<img src={IEEEwhite} className="w-32 h-32" />
-										<img src={GDSCwhite} className="w-32 h-32 object-contain" />
-									</React.Fragment>
-								)}
+								<ThemeImage 
+									dark={IEEECSwhite}
+									light={IEEECS}
+									className={"w-32 h-32 object-contain"}
+								/>
+								<ThemeImage
+									dark={IEEEwhite}
+									light={IEEE}
+									className={"w-32 h-32"}
+								/>
+								<ThemeImage
+									dark={GDSCwhite}
+									light={GDSC}
+									className={"w-32"}
+								/>
 								<img src={Hashes} className="w-32 h-32 scale-50" />
 							</div>
 						</div>
