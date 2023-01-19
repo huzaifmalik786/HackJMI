@@ -18,7 +18,7 @@ import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
 import Polygonwhite from "../images/sponsors/polygonwhite.png";
 import Solanawhite from "../images/sponsors/solanawhite.png";
 import M16Labs from "../images/sponsors/m16labs-logo.png";
-import Axure from "../images/sponsors/Axure.png";
+import Axure from "../images/sponsors/axure.png";
 import Streamyard from "../images/sponsors/streamyard.png";
 
 import { DarkThemeContext } from "../pages/Home";
@@ -65,6 +65,11 @@ function Sponsers(props) {
 				src: "https://replit.com/",
 			},
 			{
+				dark: Streamyard,
+				light: Streamyard,
+				src: "https://streamyard.com/"
+			},
+			{
 				dark: GOG,
 				light: GOG,
 				src: "https://www.geeksforgeeks.org/",
@@ -83,12 +88,8 @@ function Sponsers(props) {
 				dark: Axure,
 				light: Axure,
 				src: "https://www.axure.com/"
-			},
-			{
-				dark: Streamyard,
-				light: Streamyard,
-				src: "https://streamyard.com/"
 			}
+			
 		],
 		"Certificate Partners": [
 			{
