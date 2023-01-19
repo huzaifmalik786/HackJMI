@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ThemeImage from "../components/Image";
 
 import Header from "../partials/Header";
 import HeroHome from "../partials/HeroHome";
@@ -113,7 +114,9 @@ function Home() {
 
 						<div>
 							<a href="https://jmi.ac.in">
-								<img src={!isDarkTheme ? JMI : JMIwhite} 
+								<ThemeImage
+									dark={JMIwhite}
+									light={JMI}
 									className={"w-10"}
 								/>
 							</a>
