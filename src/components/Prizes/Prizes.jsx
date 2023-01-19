@@ -32,7 +32,7 @@ function PrizesComponent() {
 				<div className="md:w-1/4 w-1/3 flex flex-col justify-center items-center border-t-4 hover:border-orange-600 hover:bg-orange-100/20 border-transparent transition-all pt-6">
 					<img src={Trophy} className="w-40 mb-4" />
 					<h1 className="md:text-xl text-sm text-center">
-						<strong>1st</strong> Prize
+						<strong>2nd</strong> Prize
 					</h1>
 					<div className="flex flex-col justify-center items-center md:text-base text-sm">
 						<p className=" dark:text-white/60">₹ 3,000</p>
