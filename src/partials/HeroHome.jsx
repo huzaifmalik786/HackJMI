@@ -85,25 +85,30 @@ function HeroHome(props) {
 								<div>
 									<a
 										className="btn 
-										font-semibold w-full sm:w-auto sm:mb-0 mb-1 sm:ml-4 self-center bg-gradient-to-r bg-primary hover:bg-secondary text-white transition-all"
+										font-semibold w-full sm:w-auto sm:mb-0 mb-1 sm:ml-4 sm:mr-4 self-center bg-gradient-to-r bg-primary hover:bg-secondary text-white transition-all"
 										href="#register">
 										How To Register ?
 									</a>
 								</div>
-								<div>
-									<a
-										className={`btn
-										font-semibold w-full sm:w-auto sm:ml-4 self-center ${isDarkTheme?"hover:bg-gray-600 bg-gray-800":"hover:bg-gray-300 bg-gray-200"}`}
-										href="https://hack-jmi.devfolio.co/"
-										target="_blank">
-										<span
-											className={`
-											dark:text-white
-											`}>
-											Register With Devfolio
-										</span>
-									</a>
+								<div
+									className="apply-button self-center"
+									data-hackathon-slug="hack-jmi"
+									data-button-theme="dark">
 								</div>
+// 								<div>
+// 									<a
+// 										className={`btn
+// 										font-semibold w-full sm:w-auto sm:ml-4 self-center ${isDarkTheme?"hover:bg-gray-600 bg-gray-800":"hover:bg-gray-300 bg-gray-200"}`}
+// 										href="https://hack-jmi.devfolio.co/"
+// 										target="_blank">
+// 										<span
+// 											className={`
+// 											dark:text-white
+// 											`}>
+// 											Register With Devfolio
+// 										</span>
+// 									</a>
+// 								</div>
 							</div>
 							<div className="mt-4 flex flex-col items-center"
 								data-aos="zoom-y-out"
