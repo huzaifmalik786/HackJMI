@@ -119,6 +119,16 @@ function Sponsers(props) {
 						<h1 className="dark:text-white h2 mb-4" data-aos="zoom-in">
 							Sponsors
 						</h1>
+						<div className="my-5" data-aos="zoom-in">
+							<p className="text-gray-600">Want To Sponsor Us?</p>
+							<a href="https://drive.google.com/file/d/1rygr-fCBemNPIAhNjEM8bg3mOGGT99Zr/view?usp=sharing"
+								target="_blank"
+							>
+								<button className="btn btn-primary mt-3 bg-orange-600 hover:scale-95
+								hover:shadow-xl hover:shadow-orange-600/10 hover:bg-orange-700
+								transition-all text-white">Click Here</button>
+							</a>
+						</div>
 						{Object.keys(sponsorData).map((key) => (
 							<div className="w-full flex flex-col items-center mt-5">
 								<div className="flex w-full flex-row items-center justify-center mb-2">
@@ -152,6 +162,7 @@ function Sponsers(props) {
 						))}
 					</div>
 				</div>
+				
 				<div className="border" />
 			</div>
 		</section>
