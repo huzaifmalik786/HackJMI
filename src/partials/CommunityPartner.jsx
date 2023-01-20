@@ -23,7 +23,7 @@ function CommunityPartner() {
 				Fill Community Partner Form
 			</button>
             <div
-                className="flex gap-6 items-center justify-center mt-10"
+                className="flex md:gap-6 gap-3 m-1 items-center justify-center mt-10"
             >
                 {communitypartnerData.map((item,index) => {
                     return (
