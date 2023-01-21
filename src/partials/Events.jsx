@@ -24,8 +24,8 @@ function Events() {
             <h1 className="dark:text-white h2 mb-6">Events</h1>
             {events.map((event)=>(
               <div className='flex bg-gray-200 dark:bg-gray-900 rounded-l-lg rounded-lg hover:scale-95 transition-all mb-4'>
-                <div className='md:p-4 md:px-6 p-2 px-4 bg-gradient-to-br from-orange-400 to-orange-600 rounded-l-lg rounded-lg m-2'>
-                  <div className='text-center text-white text-base'>
+                <div className='md:p-4 md:px-6 p-2 px-1 bg-gradient-to-br from-orange-400 to-orange-600 rounded-l-lg rounded-lg m-2'>
+                  <div className='text-center text-white text-base scale-90'>
                     <p className='mb-2'>{event.date}</p>
                     <p className=''><strong>{event.time}</strong></p>
                   </div>
