@@ -23,18 +23,28 @@ function CommunityPartner() {
 				Fill Community Partner Form
 			</button>
             <div
-                className="flex md:gap-6 gap-3 m-1 items-center justify-center mt-10"
+                className="flex md:gap-4 gap-3 m-1 items-center justify-center mt-10 flex-wrap"
             >
-                {communitypartnerData.map((item,index) => {
-                    return (
+                {communitypartnerData.map((item,index) => (
+                    item.href? (
+                        <div>
+                        <a href={item.href} target="_blank">
+                            <img
+                                className="md:w-32 w-28 rounded-md self-center shadow-xl dark:shadow-white/10"
+                                src={item.src} 
+                            />
+                        </a>
+                    </div>
+                    ):(
                         <div>
                             <img
-                                className="w-40 rounded-md self-center shadow-xl dark:shadow-white/10"
+                                className="md:w-32 w-28 rounded-md self-center shadow-xl dark:shadow-white/10"
                                 src={item.src} 
                             />
                         </div>
                     )
-                })}
+                        
+                    ))}
             </div>
 		</div>
 	</div>
