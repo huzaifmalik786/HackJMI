@@ -28,7 +28,7 @@ function Register() {
 								data-button-theme="light"></div>
 							}
 							<strong>To register, follow these steps:</strong>
-							<ol className="flex flex-col gap-2 mt-4">
+							<ol className="flex flex-col gap-2 mt-4 mb-4">
 								<li>1. Click the "Apply with Devfolio" button below</li>
 								<li>
 									2. Create an account on devfolio. If you already have an
@@ -44,6 +44,15 @@ function Register() {
 									dashboard.
 								</li>
 							</ol>
+							<div className="flex gap-2">
+								<p className="font-semibold">Or you can apply at</p>
+								<a href="http://hack-jmi.devfolio.co"
+								target="_blank"
+								className="text-orange-600 font-semibold"
+								>
+									hack-jmi.devfolio.co
+								</a>
+							</div>
 							{/* Coming Soon */}
 						</p>
 					</div>

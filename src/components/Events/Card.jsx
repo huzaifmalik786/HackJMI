@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 import { Dialog, Transition } from '@headlessui/react'
 
 function EventsCard({ event }) {
+  const eventdate= new Date(event.time).getTime();
+  const currentdate= new Date(event.time).getTime();
     const [isOpen, setIsOpen] = useState(false);
     return (
         <React.Fragment>
@@ -45,7 +47,7 @@ function EventsCard({ event }) {
                     className='flex md:flex-col justify-center items-center p-2 w-full md:w-1/4'
                 >
                     <button
-                        className='btn flex gap-2 dark:text-white dark:hover:bg-white/20 m-2 rounded-md shadow-none'
+                        className='btn flex gap-2 w-max dark:text-white dark:hover:bg-white/20 m-2 rounded-md shadow-none'
                         onClick={() => {
                             window.open(event.url, "__blank")
                         }}
@@ -54,7 +56,7 @@ function EventsCard({ event }) {
                         <span
                             className='font-semibold'
                         >
-                            Register
+                          {eventdate>currentdate?"Register":"Watch Now"}
                         </span>
                     </button>
                 </div>
@@ -113,7 +115,7 @@ function EventsCard({ event }) {
                         }}
                     >
                         <AiOutlineLink />
-                        Register
+                        {eventdate>currentdate?"Register":"Watch Now"}
                     </button>
                     <button
                       type="button"

@@ -33,21 +33,6 @@ function Events() {
     )
   });
 
-
-  const events= [
-    {
-      name: "Introductory Session",
-      date: "22 January",
-      time: "2:00 PM",
-      details: "All Details About Session"
-    },
-    {
-      name: "Introductory Session",
-      date: "22 January",
-      time: "2:00 PM",
-      details: "All Details About Session"
-    }
-  ]
   return (
     <section className='relative' id="Events">
       {loading && "Loading... Please Wait"}
