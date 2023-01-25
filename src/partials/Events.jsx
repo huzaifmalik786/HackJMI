@@ -24,6 +24,7 @@ function Events() {
           updatedAt
           url
           venue
+          streamyardLink
           post {
             id
             url
