@@ -5,7 +5,7 @@ import XYZwhite from "../../images/sponsors/xyzwhite.png";
 import m16 from "../../images/sponsors/m16labs-logo.png";
 import Logo from "../../images/logo.png";
 import { motion } from "framer-motion";
-import { DarkThemeContext } from "../../pages/Home";
+import { DarkThemeContext } from "../../App";
 import ThemeImage from "../Image";
 
 function Swags() {
@@ -66,7 +66,7 @@ function Swags() {
 						light={XYZ}
 						className={"w-40  md:mb-4 md:p-5 p-3"}
 					/>
-					<div className="mt-6">
+					<div className="mt-6 text-center">
 						<p className=" dark:text-white/60">
 							Free <strong className="text-orange-600">.xyz</strong> domains
 							from gen.xyz.!!
