@@ -129,8 +129,8 @@ function Header({ UpdateTheme }) {
 														<Popover.Panel
 															className={`absolute mt-2 z-10 bg-white dark:bg-black/90 dark:text-white shadow-lg rounded-md p-4 `}>
 															<div className="flex flex-col gap-2">
-																{tab?.data?.map((item) => (
-																	<>
+																{tab?.data?.map((item, key) => (
+																	<React.Fragment key={key}>
 																		<a
 																			href={item.href}
 																			className="p-2 hover:bg-black/10 rounded-md"
@@ -139,7 +139,7 @@ function Header({ UpdateTheme }) {
 																			}}>
 																			{item.name}
 																		</a>
-																	</>
+																	</React.Fragment>
 																))}
 															</div>
 														</Popover.Panel>

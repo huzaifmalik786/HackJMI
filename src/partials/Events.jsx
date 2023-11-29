@@ -43,9 +43,10 @@ function Events() {
           {/* Section  */}
 					<div className="max-w-3xl mx-auto text-center w-full">
             <h1 className="dark:text-white h2 mb-6">Events</h1>
-            {data?.events.map((event)=>(
+            {data?.events.map((event, key)=>(
               <EventsCard 
                 event={event}
+                key={key}
               />
             ))}
           </div>
