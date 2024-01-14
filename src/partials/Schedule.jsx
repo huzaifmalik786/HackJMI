@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 
 function Schedule(props) {
 	const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);
@@ -21,6 +21,14 @@ function Schedule(props) {
 		{
 			interval: "12th Feb 2023",
 			title: "Hackathon Ends",
+		},
+		{
+			interval: "14th Feb 2023",
+			title: "Finalist Announced",
+		},
+		{
+			interval: "15th Feb 2023",
+			title: "Finalist Presentations",
 		},
 	];
 
@@ -57,7 +65,6 @@ function Schedule(props) {
 				</div>
 				<div className="border" />
 			</div>
-
 		</section>
 	);
 }
